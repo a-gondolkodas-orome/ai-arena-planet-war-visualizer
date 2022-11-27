@@ -13,6 +13,8 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `prettier --write .` to use globally installed prettier to format the code.
+Run `eslint .` and make sure there are no erros before pushing. (eslint should be globally installed).
 
 ## Running unit tests
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import * as p5 from 'p5';
 import { GameModule } from './sketch/game.module';
 import {
@@ -18,14 +18,14 @@ import {
 export class NanowarVisualizerComponent implements OnChanges {
   @Input() public jsonstring!: string;
 
-  public time: number = 0;
-  public last: number = 0;
-  public isAnimating: boolean = false;
-  public fps: number = 3;
+  public time = 0;
+  public last = 0;
+  public isAnimating = false;
+  public fps = 3;
 
   private instance?: p5;
-  private last_time: number = 0;
-  private accFrameTime: number = 0;
+  private last_time = 0;
+  private accFrameTime = 0;
 
   private sketch(ctx: p5): void {
     let game: GameModule;
@@ -42,13 +42,14 @@ export class NanowarVisualizerComponent implements OnChanges {
       }: { board: JsonBoard; planets: JsonPlanetInit[]; players: JsonPlayer[] } = init;
       const { width, height }: { width: number; height: number } = board;
 
-      const clientHeight = document.querySelector<HTMLDivElement>('#container')!.clientHeight;
-      const clientWidth = document.querySelector<HTMLDivElement>('#canvas')!.clientWidth;
+      const clientHeight =
+        document.querySelector<HTMLDivElement>('#container')?.clientHeight ?? 600;
+      const clientWidth = document.querySelector<HTMLDivElement>('#canvas')?.clientWidth ?? 800;
       const wratio = clientWidth / width;
       const hratio = clientHeight / height;
       const min_ratio = Math.min(wratio, hratio);
 
-      let C = ctx.createCanvas(width * min_ratio, height * min_ratio);
+      const C = ctx.createCanvas(width * min_ratio, height * min_ratio);
       C.parent('canvas');
 
       scale = min_ratio;
@@ -81,7 +82,6 @@ export class NanowarVisualizerComponent implements OnChanges {
         game.update(updates[this.time]);
         game.render(ctx, this.isAnimating ? this.accFrameTime * this.fps : 1);
         game.troops = [];
-        document.querySelector('#tick-label')!.innerHTML = `Tick: ${this.time}`;
       }
 
       if (this.time == this.last && this.isAnimating) {
@@ -112,12 +112,12 @@ export class NanowarVisualizerComponent implements OnChanges {
     this.instance?.noLoop();
   }
 
-  fpsInputEvent(event: any): void {
-    this.fps = parseFloat(event?.target?.value) ?? 1;
-    console.log(this.fps);
+  fpsInputEvent(event: Event): void {
+    const element = event.target as HTMLInputElement;
+    this.fps = parseFloat(element.value) ?? 1;
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(): void {
     if (this.jsonstring) {
       this.instance = new p5(this.sketch.bind(this));
     }
