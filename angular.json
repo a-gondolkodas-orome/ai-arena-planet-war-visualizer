@@ -3,5 +3,129 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "nanowar-visualizer": {
+      "projectType": "library",
+      "root": "projects/nanowar-visualizer",
+      "sourceRoot": "projects/nanowar-visualizer/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/nanowar-visualizer/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/nanowar-visualizer/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/nanowar-visualizer/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/nanowar-visualizer/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "nanowar-visualizer-app": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/nanowar-visualizer-app",
+      "sourceRoot": "projects/nanowar-visualizer-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/nanowar-visualizer-app",
+            "index": "projects/nanowar-visualizer-app/src/index.html",
+            "main": "projects/nanowar-visualizer-app/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/nanowar-visualizer-app/tsconfig.app.json",
+            "assets": [
+              "projects/nanowar-visualizer-app/src/favicon.ico",
+              "projects/nanowar-visualizer-app/src/assets"
+            ],
+            "styles": [
+              "projects/nanowar-visualizer-app/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "nanowar-visualizer-app:build:production"
+            },
+            "development": {
+              "browserTarget": "nanowar-visualizer-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "nanowar-visualizer-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/nanowar-visualizer-app/tsconfig.spec.json",
+            "assets": [
+              "projects/nanowar-visualizer-app/src/favicon.ico",
+              "projects/nanowar-visualizer-app/src/assets"
+            ],
+            "styles": [
+              "projects/nanowar-visualizer-app/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
   }
 }
