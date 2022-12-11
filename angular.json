@@ -55,7 +55,13 @@
             "tsConfig": "projects/nanowar-visualizer-app/tsconfig.app.json",
             "assets": [
               "projects/nanowar-visualizer-app/src/favicon.ico",
-              "projects/nanowar-visualizer-app/src/assets"
+              "projects/nanowar-visualizer-app/src/assets",
+              {
+                "glob": "**/*",
+                "input": "projects/nanowar-visualizer-app/src/lib-assets",
+                "output": "/assets",
+                "followSymlinks": true
+              }
             ],
             "styles": [
               "projects/nanowar-visualizer-app/src/styles.css"

@@ -1,17 +1,13 @@
 {
-  "name": "@kristofy/nanowar-visualizer",
+  "name": "@leanil/nanowar-visualizer",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kristofy/nanowar-visualizer.git"
+    "url": "https://github.com/leanil/nanowar-visualizer.git"
   },
-  "version": "0.0.4",
-  "files":[
-    "dist/nanowar-visualizer"
-  ],
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "publish-lib": "ng build nanowar-visualizer && npm publish ./dist/nanowar-visualizer",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"
