@@ -1,44 +1,26 @@
-name: GitHub Actions Build and npm pack the library project
-run-name: ${{ github.actor }} Has pushed another version, building and publising 🚀
-on: [push]
+name: Publish the library project as a package
+run-name: ${{ github.actor }} Has pushed another version, building and publishing 🚀
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
 jobs:
   Build:
     runs-on: ubuntu-latest
-    
-    permissions: write-all
-
+    permissions:
+      contents: read
+      packages: write
     steps:
-    - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
-        node-version: 18
-        cache: 'npm'
+        node-version: 16
         registry-url: 'https://npm.pkg.github.com'
-        scope: '@Kristofy'
-
-    - name: Cache node modules
-      run: |
-        npm install --include=dev
-
-    - name: setup and install
-      run: |
-        npm install
-
-    - name: build
-      run: npm run-script ng build nanowar-visualizer
-      
-    - name: Authenticate with the GitHub Package Registry
-      run:
-        echo "//npm.pkg.github.com/$NPM_AUTH_TOKEN"
-        echo "@Kristofy:registry=https://npm.pkg.github.com" > .npmrc
-        echo "//npm.pkg.github.com:_authToken=NPM_AUTH_TOKEN" >> .npmrc
-        echo "always-auth=true" >> .npmrc
-        source ./.npmrc
-        cat .npmrc
-
-    - name: Publish the package to npm
-      run: |
-        npm publish
+    - run: npm install
+    - run: npm run publish-lib
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

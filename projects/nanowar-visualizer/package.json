@@ -1,9 +1,11 @@
 {
-  "name": "nanowar-visualizer",
-  "version": "0.0.1",
+  "name": "@leanil/nanowar-visualizer",
+  "version": "0.0.7",
+  "type": "module",
   "peerDependencies": {
     "@angular/common": "^15.0.0",
-    "@angular/core": "^15.0.0"
+    "@angular/core": "^15.0.0",
+    "p5": "1"
   },
   "dependencies": {
     "tslib": "^2.3.0"
