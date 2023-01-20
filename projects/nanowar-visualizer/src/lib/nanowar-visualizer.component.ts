@@ -26,11 +26,13 @@ export class NanowarVisualizerComponent implements OnChanges {
   private instance?: p5;
   private last_time = 0;
   private accFrameTime = 0;
+ 
 
   private sketch(ctx: p5): void {
     let game: GameModule;
     let updates: JsonTick[];
     let scale: number;
+    let backgroundImage: p5.Image;
 
     ctx.setup = () => {
       const jsonObj: JsonLog = JSON.parse(this.jsonstring);
@@ -51,15 +53,17 @@ export class NanowarVisualizerComponent implements OnChanges {
 
       const C = ctx.createCanvas(width * min_ratio, height * min_ratio);
       C.parent('canvas');
+      backgroundImage = ctx.loadImage('./assets/bg1.png');
+
+
 
       scale = min_ratio;
       ctx.scale(min_ratio);
-      ctx.noLoop();
 
       updates = ticks;
       this.last = updates.length - 1;
 
-      game = new GameModule(planets, players);
+      game = new GameModule(planets, players, ctx);
       ctx.textAlign(ctx.CENTER, ctx.CENTER);
     };
 
@@ -78,7 +82,7 @@ export class NanowarVisualizerComponent implements OnChanges {
 
       if (this.time <= this.last && this.time >= 0) {
         ctx.scale(scale);
-        ctx.background(51);
+        ctx.background(backgroundImage ?? '#000000');
         game.update(updates[this.time]);
         game.render(ctx, this.isAnimating ? this.accFrameTime * this.fps : 1);
         game.troops = [];

@@ -13,22 +13,31 @@ export class Planet {
   constructor(id: number, x: number, y: number, size: number, population: number, player: Player) {
     this.uid = id;
     this.pos = new Point(x, y);
-    this.size = size;
+    this.size = size*5;
     this.population = population;
     this.player = player;
   }
 
+  static uninhabitedPlanet: p5.Image | null = null;
+
   render(ctx: p5): void {
+    if(Planet.uninhabitedPlanet === null) Planet.uninhabitedPlanet = ctx.loadImage("assets/min_planet0.png");
     const color = this.player?.color ?? '#ffaaaaaa';
-    //const color = this.player?.color || "#aaaaaa"
 
     ctx.noStroke();
-    ctx.fill(color);
-    ctx.circle(this.pos.x, this.pos.y, this.size);
+    if(this.player?.planetImage == null) {
+        if(this.player == null) {
+            ctx.image(Planet.uninhabitedPlanet, this.pos.x - this.size / 2, this.pos.y - this.size / 2, this.size, this.size);
+        } else {
+            ctx.fill(color);
+            ctx.circle(this.pos.x , this.pos.y, this.size);
+        }
+    } else {
+    ctx.image(this.player?.planetImage, this.pos.x - this.size / 2, this.pos.y - this.size / 2, this.size, this.size);
+    }
     ctx.stroke('#ffffff');
     ctx.strokeWeight(1);
     ctx.text(this.population, this.pos.x, this.pos.y);
-    ctx.strokeWeight(1);
     ctx.noStroke();
   }
 
@@ -36,4 +45,7 @@ export class Planet {
     this.population = population;
     this.player = player;
   }
+
 }
+
+

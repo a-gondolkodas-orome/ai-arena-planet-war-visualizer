@@ -50,13 +50,19 @@ export class Troop {
     const ex = b.x - Math.cos(angle) * (this.to.size / 2);
     const ey = b.y - Math.sin(angle) * (this.to.size / 2);
 
+    const size = 20;
+    const offset = 5;
     ctx.strokeWeight(1);
     ctx.stroke('white');
     ctx.fill(this.player.color);
     ctx.line(sx, sy, ex, ey);
-    ctx.text(this.size, x, y - 20 - 5);
-    ctx.noStroke();
-    ctx.circle(x, y, 20);
-    ctx.strokeWeight(1);
+    if(this.player.troopImage == null) {
+        ctx.noStroke();
+        ctx.circle(x, y, size);
+    } else {
+        ctx.image(this.player.troopImage, x - size / 2, y - size / 2, size, size);
+    }
+    ctx.stroke('white');
+    ctx.text(this.size, x, y - size - offset);
   }
 }

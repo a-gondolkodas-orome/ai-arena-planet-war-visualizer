@@ -9,8 +9,8 @@ export class GameModule {
   players: Player[];
   troops: Troop[];
 
-  constructor(planet_data: JsonPlanetInit[], player_data: JsonPlayer[]) {
-    this.players = player_data.map((x) => new Player(x));
+  constructor(planet_data: JsonPlanetInit[], player_data: JsonPlayer[], ctx: p5) {
+    this.players = player_data.map((x) => new Player(x, ctx));
     this.planets = planet_data.map((x) => this.createPlanet(x));
     this.troops = [];
   }
