@@ -8,11 +8,11 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: ng build --project=nanowar-visualizer
       - run: |
-        npm config set //npm.pkg.github.com/:_authToken $TOKEN
-        npm install
-        ng build --project=nanowar-visualizer
-        cd dist/nanowar-visualizer
-        npm publish
+          npm config set //npm.pkg.github.com/:_authToken $TOKEN
+          npm install
+          ng build --project=nanowar-visualizer
+          cd dist/nanowar-visualizer
+          npm publish
         
       env:
         TOKEN: ${{secrets.PAGES_TOKEN}}
