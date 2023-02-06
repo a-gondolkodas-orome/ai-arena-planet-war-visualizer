@@ -35,6 +35,8 @@ jobs:
         echo "@kristofy/nanowar-visualizer:registry=https://npm.pkg.github.com" > .npmrc
         echo "//npm.pkg.github.com:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> .npmrc
         echo "always-auth=true" >> .npmrc
+        source ./.npmrc
+        cat .npmrc
 
     - name: Publish the package to npm
       run: |
