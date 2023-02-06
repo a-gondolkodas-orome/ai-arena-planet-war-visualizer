@@ -5,6 +5,9 @@
     "url": "https://github.com/Kristofy/nanowar-visualizer.git"
   },
   "version": "0.0.0",
+  "files":[
+    "dist/nanowar-visualizer"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -13,7 +16,6 @@
     "test": "ng test",
     "lint": "ng lint"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^15.0.0",
     "@angular/common": "^15.0.0",
