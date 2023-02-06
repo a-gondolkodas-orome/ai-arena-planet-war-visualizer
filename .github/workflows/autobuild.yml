@@ -1,0 +1,17 @@
+name: GitHub Actions Build and npm pack the library project
+run-name: ${{ github.actor }} Has pushed another version, building and publising 🚀
+on: [push]
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: ng build --project=nanowar-visualizer
+      - run: 
+        npm config set //npm.pkg.github.com/:_authToken $TOKEN
+        npm install
+        ng build --project=nanowar-visualizer
+        cd dist/nanowar-visualizer
+        npm publish
+      env:
+        TOKEN: ${{secrets.PAGES_TOKEN}}
