@@ -32,6 +32,7 @@ jobs:
       
     - name: Authenticate with the GitHub Package Registry
       run:
+        echo "//npm.pkg.github.com/${{ secrets.NPM_AUTH_TOKEN }}"
         echo "@Kristofy:registry=https://npm.pkg.github.com" > .npmrc
         echo "//npm.pkg.github.com:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> .npmrc
         echo "always-auth=true" >> .npmrc
@@ -41,3 +42,5 @@ jobs:
     - name: Publish the package to npm
       run: |
         npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
