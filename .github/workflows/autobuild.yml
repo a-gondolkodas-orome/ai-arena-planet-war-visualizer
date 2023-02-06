@@ -5,31 +5,18 @@ jobs:
   Build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x]
-
     steps:
     - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
     - uses: actions/checkout@v3
+    - uses: c-hive/gha-npm-cache@v1
     - name: Cache node modules
-      uses: actions/cache@v1
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-
-    - name: Node ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-
+      run: |
+        npm install --only=dev
 
     - name: setup and install
       run: |
-            npm config set //npm.pkg.github.com/:_authToken $TOKEN
-            npm install
+        npm config set //npm.pkg.github.com/:_authToken $TOKEN
+        npm install
 
     - name: build
       run: ng build --project=nanowar-visualizer
