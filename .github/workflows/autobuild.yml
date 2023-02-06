@@ -32,7 +32,7 @@ jobs:
       
     - name: Authenticate with the GitHub Package Registry
       run:
-        echo "@kristofy:registry=https://npm.pkg.github.com" > .npmrc
+        echo "@kristofy/nanowar-visualizer:registry=https://npm.pkg.github.com" > .npmrc
         echo "//npm.pkg.github.com:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> .npmrc
         echo "always-auth=true" >> .npmrc
 
