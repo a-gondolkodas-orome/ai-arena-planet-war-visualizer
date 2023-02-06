@@ -12,6 +12,8 @@ jobs:
       with:
         node-version: 18
         cache: 'npm'
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@kristofy'
 
     - name: Cache node modules
       run: |
@@ -24,11 +26,17 @@ jobs:
     - name: build
       run: npm run-script ng build nanowar-visualizer
       
+    - name: Authenticate with the GitHub Package Registry
+      run:
+        echo "//npm.pkg.github.com:_authToken=${{ secrets.GITHUB_TOKEN }}" >
+        ~/.npmrc
+
+
+
+
     - name: publish
       run: |
-        npm config set //npm.pkg.github.com/:_authToken $TOKEN
         cd ./dist/nanowar-visualizer
         npm publish
-
       env:
-        TOKEN: ${{secrets.GITHUB_TOKEN}}
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
