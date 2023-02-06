@@ -27,7 +27,7 @@ jobs:
       
     - name: publish
       run: |
-        cd /dist/nanowar-visualizer
+        cd ./dist/nanowar-visualizer
         npm publish
         
       env:
