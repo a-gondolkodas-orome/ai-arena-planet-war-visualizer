@@ -32,13 +32,9 @@ jobs:
       
     - name: Authenticate with the GitHub Package Registry
       run:
-        echo "//npm.pkg.github.com:_authToken=${{ secrets.GITHUB_TOKEN }}" >
+        echo "//npm.pkg.github.com:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >
         ~/.npmrc
-
 
     - name: Publish the package to npm
       run: |
-        cd ./dist/nanowar-visualizer
-        npm publish --auth-token=$NODE_AUTH_TOKEN
-      env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        npm publish
