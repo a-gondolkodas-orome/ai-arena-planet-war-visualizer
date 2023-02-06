@@ -17,7 +17,7 @@ jobs:
         node-version: 18
         cache: 'npm'
         registry-url: 'https://npm.pkg.github.com'
-        scope: '@kristofy'
+        scope: '@Kristofy'
 
     - name: Cache node modules
       run: |
@@ -32,7 +32,7 @@ jobs:
       
     - name: Authenticate with the GitHub Package Registry
       run:
-        echo "@kristofy/nanowar-visualizer:registry=https://npm.pkg.github.com" > .npmrc
+        echo "@Kristofy:registry=https://npm.pkg.github.com" > .npmrc
         echo "//npm.pkg.github.com:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> .npmrc
         echo "always-auth=true" >> .npmrc
         source ./.npmrc
