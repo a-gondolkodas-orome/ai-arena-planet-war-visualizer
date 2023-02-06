@@ -11,7 +11,7 @@ jobs:
     - uses: c-hive/gha-npm-cache@v1
     - name: Cache node modules
       run: |
-        npm install --only=dev
+        npm install --include=dev
 
     - name: setup and install
       run: |
