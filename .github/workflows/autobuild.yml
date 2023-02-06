@@ -11,6 +11,7 @@ jobs:
 
     steps:
     - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+    - uses: actions/checkout@v3
     - name: Cache node modules
       uses: actions/cache@v1
       with:
@@ -29,7 +30,7 @@ jobs:
       run: |
             npm config set //npm.pkg.github.com/:_authToken $TOKEN
             npm install
-            
+
     - name: build
       run: ng build --project=nanowar-visualizer
       
