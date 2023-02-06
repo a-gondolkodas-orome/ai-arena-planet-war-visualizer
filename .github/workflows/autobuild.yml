@@ -32,11 +32,9 @@ jobs:
         ~/.npmrc
 
 
-
-
-    - name: publish
+    - name: Publish the package to npm
       run: |
         cd ./dist/nanowar-visualizer
-        npm publish
+        npm publish --auth-token=$NPM_AUTH_TOKEN
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
