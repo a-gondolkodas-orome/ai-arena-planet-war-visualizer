@@ -1,5 +1,5 @@
 {
-  "name": "nanowar-visualizer",
+  "name": "@kristofy/nanowar-visualizer",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
