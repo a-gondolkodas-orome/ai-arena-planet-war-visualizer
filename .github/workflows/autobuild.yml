@@ -19,7 +19,6 @@ jobs:
 
     - name: setup and install
       run: |
-        npm config set //npm.pkg.github.com/:_authToken ${{secrets.GITHUB_TOKEN}}
         npm install
 
     - name: build
@@ -27,5 +26,9 @@ jobs:
       
     - name: publish
       run: |
+        npm config set //npm.pkg.github.com/:_authToken $TOKEN
         cd ./dist/nanowar-visualizer
         npm publish
+
+      env:
+        TOKEN: ${{secrets.GITHUB_TOKEN}}
