@@ -2,7 +2,7 @@ import { Planet } from './planet';
 import { Player } from './player';
 import { Troop } from './troop';
 import { JsonPlanet, JsonPlanetInit, JsonPlayer, JsonTick, JsonTroops } from './interfaces';
-import * as p5 from 'p5';
+import p5 from 'p5';
 
 export class GameModule {
   planets: Planet[];

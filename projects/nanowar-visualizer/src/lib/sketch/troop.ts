@@ -2,7 +2,7 @@ import { Planet } from './planet';
 import { Player } from './player';
 import { Point } from './point';
 
-import * as p5 from 'p5';
+import p5 from 'p5';
 
 export class Troop {
   from: Planet;

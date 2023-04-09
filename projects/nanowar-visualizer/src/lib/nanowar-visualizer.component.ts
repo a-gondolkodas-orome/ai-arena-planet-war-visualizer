@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import * as p5 from 'p5';
+import p5 from 'p5';
 import { GameModule } from './sketch/game.module';
 import {
   JsonBoard,
@@ -26,7 +26,7 @@ export class NanowarVisualizerComponent implements OnChanges {
   private instance?: p5;
   private last_time = 0;
   private accFrameTime = 0;
- 
+
 
   private sketch(ctx: p5): void {
     let game: GameModule;

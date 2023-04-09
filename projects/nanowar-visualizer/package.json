@@ -1,6 +1,6 @@
 {
   "name": "@leanil/nanowar-visualizer",
-  "version": "0.0.7",
+  "version": "0.0.10",
   "type": "module",
   "peerDependencies": {
     "@angular/common": "^15.0.0",
@@ -9,5 +9,6 @@
   },
   "dependencies": {
     "tslib": "^2.3.0"
-  }
+  },
+  "sideEffects": true
 }
