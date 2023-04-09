@@ -9,7 +9,7 @@ export class Player {
   troopImage: p5.Image;
 
   constructor(player_data: JsonPlayer, ctx: p5) {
-    this.uid = player_data.id;
+    this.uid = player_data.index;
     this.name = player_data.name;
     this.color = Player.colors[this.uid % Player.colors.length];
     this.planetImage = ctx.loadImage(Player.planets[this.uid % Player.planets.length]);

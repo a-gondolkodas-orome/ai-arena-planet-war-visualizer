@@ -35,8 +35,9 @@ export interface JsonPlanet {
 }
 
 export interface JsonPlayer {
-  id: number;
+  id: string;
   name: string;
+  index: number;
 }
 
 export interface JsonTroops {
