@@ -1,4 +1,4 @@
-import * as p5 from 'p5';
+import p5 from 'p5';
 import { JsonPlayer } from './interfaces';
 
 export class Player {
@@ -18,5 +18,5 @@ export class Player {
 
   static colors: string[] = ['#FFFC31', '#fe0000', '#979801', '#06a300', '#011efe', '#fe00f6'];
   static planets: string[] = Array.from({ length: 8 }, (_, i) => `assets/min_planet${i+1}.png`);
-  static troops: string[] = Array.from({ length: 8 }, (_, i) => `assets/min_troop${i+1}.png`);;
+  static troops: string[] = Array.from({ length: 8 }, (_, i) => `assets/min_troop${i+1}.png`);
 }
