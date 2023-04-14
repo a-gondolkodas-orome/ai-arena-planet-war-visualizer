@@ -97,8 +97,18 @@
   display: flex;
 }
 
-.d-flex .flex-column {
+.flex-column {
+  display: flex;
   flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-out {
+  justify-content: space-around;
 }
 
 #fps-range {
@@ -127,9 +137,16 @@
 }
 
 .messages {
+  width: 100%;
+}
+
+.bordered {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  width: 100%;
+}
+
+.flex-middle {
+  align-self: center;
 }
 
 .messages h1 {
