@@ -37,12 +37,14 @@ export const jsonstring = `
     ],
     "players": [
       {
-        "id": 0,
-        "name": "bot1"
+        "id": "abcd1234",
+        "name": "bot1",
+        "index": 0
       },
       {
-        "id": 1,
-        "name": "bot2"
+        "id": "1234abcd",
+        "name": "bot2",
+        "index": 1
       }
     ]
   },
@@ -69,42 +71,42 @@ export const jsonstring = `
           "player": null,
           "population": 1
         }
-      ],  
+      ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "START",
-              "timestamp": 1681028270636
+              "timestamp": 1681058529052
             },
             {
               "message": "0\\n4\\n50 50 1\\n150 150 1\\n50 150 3\\n150 50 1\\n0 14 10 10 \\n14 0 10 10 \\n10 10 0 14 \\n10 10 14 0 \\n",
-              "timestamp": 1681028270698
+              "timestamp": 1681058529115
             }
           ],
           "sent": [
             {
               "message": "OK",
-              "timestamp": 1681028270666
+              "timestamp": 1681058529082
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "START",
-              "timestamp": 1681028270666
+              "timestamp": 1681058529082
             },
             {
               "message": "1\\n4\\n50 50 1\\n150 150 1\\n50 150 3\\n150 50 1\\n0 14 10 10 \\n14 0 10 10 \\n10 10 0 14 \\n10 10 14 0 \\n",
-              "timestamp": 1681028270698
+              "timestamp": 1681058529117
             }
           ],
           "sent": [
             {
               "message": "OK",
-              "timestamp": 1681028270697
+              "timestamp": 1681058529113
             }
           ]
         }
@@ -135,31 +137,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "1\\n0 0 10\\n1 1 10\\n2 -1 1\\n3 -1 1\\n0\\n",
-              "timestamp": 1681028270702
+              "timestamp": 1681058529123
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028270733
+              "timestamp": 1681058529153
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "1\\n0 0 10\\n1 1 10\\n2 -1 1\\n3 -1 1\\n0\\n",
-              "timestamp": 1681028270733
+              "timestamp": 1681058529153
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028270764
+              "timestamp": 1681058529184
             }
           ]
         }
@@ -190,31 +192,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "2\\n0 0 11\\n1 1 11\\n2 -1 1\\n3 -1 1\\n0\\n",
-              "timestamp": 1681028270765
+              "timestamp": 1681058529185
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028270796
+              "timestamp": 1681058529215
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "2\\n0 0 11\\n1 1 11\\n2 -1 1\\n3 -1 1\\n0\\n",
-              "timestamp": 1681028270796
+              "timestamp": 1681058529215
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028270826
+              "timestamp": 1681058529245
             }
           ]
         }
@@ -245,31 +247,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "3\\n0 0 12\\n1 1 12\\n2 -1 1\\n3 -1 1\\n0\\n",
-              "timestamp": 1681028270827
+              "timestamp": 1681058529246
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028270857
+              "timestamp": 1681058529280
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "3\\n0 0 12\\n1 1 12\\n2 -1 1\\n3 -1 1\\n0\\n",
-              "timestamp": 1681028270857
+              "timestamp": 1681058529280
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028270888
+              "timestamp": 1681058529311
             }
           ]
         }
@@ -310,35 +312,35 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "4\\n0 0 13\\n1 1 13\\n2 -1 1\\n3 -1 1\\n0\\n",
-              "timestamp": 1681028270890
+              "timestamp": 1681058529312
             }
           ],
           "sent": [
             {
               "message": "1",
-              "timestamp": 1681028270920
+              "timestamp": 1681058529343
             },
             {
               "message": "0 2 12",
-              "timestamp": 1681028270921
+              "timestamp": 1681058529343
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "4\\n0 0 13\\n1 1 13\\n2 -1 1\\n3 -1 1\\n0\\n",
-              "timestamp": 1681028270921
+              "timestamp": 1681058529344
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028270951
+              "timestamp": 1681058529374
             }
           ]
         }
@@ -379,31 +381,31 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "5\\n0 0 2\\n1 1 14\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028270952
+              "timestamp": 1681058529376
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028270982
+              "timestamp": 1681058529406
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "5\\n0 0 2\\n1 1 14\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028270983
+              "timestamp": 1681058529406
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271012
+              "timestamp": 1681058529437
             }
           ]
         }
@@ -444,31 +446,31 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "6\\n0 0 3\\n1 1 15\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271013
+              "timestamp": 1681058529437
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271043
+              "timestamp": 1681058529468
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "6\\n0 0 3\\n1 1 15\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271044
+              "timestamp": 1681058529468
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271073
+              "timestamp": 1681058529498
             }
           ]
         }
@@ -509,31 +511,31 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "7\\n0 0 4\\n1 1 16\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271074
+              "timestamp": 1681058529499
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271103
+              "timestamp": 1681058529529
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "7\\n0 0 4\\n1 1 16\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271103
+              "timestamp": 1681058529529
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271134
+              "timestamp": 1681058529560
             }
           ]
         }
@@ -574,31 +576,31 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "8\\n0 0 5\\n1 1 17\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271134
+              "timestamp": 1681058529560
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271165
+              "timestamp": 1681058529590
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "8\\n0 0 5\\n1 1 17\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271165
+              "timestamp": 1681058529590
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271196
+              "timestamp": 1681058529621
             }
           ]
         }
@@ -639,31 +641,31 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "9\\n0 0 6\\n1 1 18\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271196
+              "timestamp": 1681058529621
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271227
+              "timestamp": 1681058529651
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "9\\n0 0 6\\n1 1 18\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271227
+              "timestamp": 1681058529652
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271257
+              "timestamp": 1681058529682
             }
           ]
         }
@@ -704,35 +706,35 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "10\\n0 0 7\\n1 1 19\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271258
+              "timestamp": 1681058529682
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271289
+              "timestamp": 1681058529713
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "10\\n0 0 7\\n1 1 19\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271289
+              "timestamp": 1681058529713
             }
           ],
           "sent": [
             {
               "message": "1",
-              "timestamp": 1681028271319
+              "timestamp": 1681058529743
             },
             {
               "message": "-1 1 1",
-              "timestamp": 1681028271319
+              "timestamp": 1681058529743
             }
           ],
           "commandError": "Invalid planet id in line 1! They should be between 0 and 4: -1 1 1"
@@ -774,31 +776,31 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "11\\n0 0 8\\n1 1 20\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271320
+              "timestamp": 1681058529743
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271351
+              "timestamp": 1681058529774
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "11\\n0 0 8\\n1 1 20\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271351
+              "timestamp": 1681058529774
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271381
+              "timestamp": 1681058529804
             }
           ]
         }
@@ -839,31 +841,31 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "12\\n0 0 9\\n1 1 21\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271382
+              "timestamp": 1681058529805
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271412
+              "timestamp": 1681058529835
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "12\\n0 0 9\\n1 1 21\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271413
+              "timestamp": 1681058529835
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271443
+              "timestamp": 1681058529866
             }
           ]
         }
@@ -904,31 +906,31 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "13\\n0 0 10\\n1 1 22\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271444
+              "timestamp": 1681058529866
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271473
+              "timestamp": 1681058529896
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "13\\n0 0 10\\n1 1 22\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271473
+              "timestamp": 1681058529896
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271504
+              "timestamp": 1681058529926
             }
           ]
         }
@@ -959,31 +961,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "14\\n0 0 11\\n1 1 23\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271504
+              "timestamp": 1681058529927
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271535
+              "timestamp": 1681058529957
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "14\\n0 0 11\\n1 1 23\\n2 -1 1\\n3 -1 1\\n1\\n0 0 2 12 14\\n",
-              "timestamp": 1681028271535
+              "timestamp": 1681058529958
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271565
+              "timestamp": 1681058529988
             }
           ]
         }
@@ -1014,31 +1016,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "15\\n0 0 12\\n1 1 24\\n2 0 11\\n3 -1 1\\n0\\n",
-              "timestamp": 1681028271566
+              "timestamp": 1681058529989
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271596
+              "timestamp": 1681058530019
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "15\\n0 0 12\\n1 1 24\\n2 0 11\\n3 -1 1\\n0\\n",
-              "timestamp": 1681028271597
+              "timestamp": 1681058530019
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271627
+              "timestamp": 1681058530050
             }
           ]
         }
@@ -1079,35 +1081,35 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "16\\n0 0 13\\n1 1 25\\n2 0 11\\n3 -1 1\\n0\\n",
-              "timestamp": 1681028271628
+              "timestamp": 1681058530050
             }
           ],
           "sent": [
             {
               "message": "1",
-              "timestamp": 1681028271657
+              "timestamp": 1681058530080
             },
             {
               "message": "0 3 12",
-              "timestamp": 1681028271657
+              "timestamp": 1681058530080
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "16\\n0 0 13\\n1 1 25\\n2 0 11\\n3 -1 1\\n0\\n",
-              "timestamp": 1681028271657
+              "timestamp": 1681058530080
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271688
+              "timestamp": 1681058530111
             }
           ]
         }
@@ -1148,31 +1150,31 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "17\\n0 0 2\\n1 1 26\\n2 0 11\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028271688
+              "timestamp": 1681058530111
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271718
+              "timestamp": 1681058530141
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "17\\n0 0 2\\n1 1 26\\n2 0 11\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028271719
+              "timestamp": 1681058530141
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271749
+              "timestamp": 1681058530171
             }
           ]
         }
@@ -1213,31 +1215,31 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "18\\n0 0 3\\n1 1 27\\n2 0 12\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028271750
+              "timestamp": 1681058530172
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271780
+              "timestamp": 1681058530201
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "18\\n0 0 3\\n1 1 27\\n2 0 12\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028271780
+              "timestamp": 1681058530202
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271811
+              "timestamp": 1681058530232
             }
           ]
         }
@@ -1278,31 +1280,31 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "19\\n0 0 4\\n1 1 28\\n2 0 12\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028271811
+              "timestamp": 1681058530233
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271842
+              "timestamp": 1681058530263
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "19\\n0 0 4\\n1 1 28\\n2 0 12\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028271842
+              "timestamp": 1681058530263
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271872
+              "timestamp": 1681058530293
             }
           ]
         }
@@ -1343,31 +1345,31 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "20\\n0 0 5\\n1 1 29\\n2 0 12\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028271873
+              "timestamp": 1681058530294
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271902
+              "timestamp": 1681058530324
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "20\\n0 0 5\\n1 1 29\\n2 0 12\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028271902
+              "timestamp": 1681058530324
             }
           ],
           "sent": [
             {
               "message": "-1",
-              "timestamp": 1681028271932
+              "timestamp": 1681058530355
             }
           ],
           "commandError": "Expected the number of commands, but received: -1"
@@ -1409,31 +1411,31 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "21\\n0 0 6\\n1 1 30\\n2 0 13\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028271933
+              "timestamp": 1681058530356
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271963
+              "timestamp": 1681058530387
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "21\\n0 0 6\\n1 1 30\\n2 0 13\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028271964
+              "timestamp": 1681058530388
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028271994
+              "timestamp": 1681058530418
             }
           ]
         }
@@ -1474,31 +1476,31 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "22\\n0 0 7\\n1 1 31\\n2 0 13\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028271996
+              "timestamp": 1681058530418
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272025
+              "timestamp": 1681058530449
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "22\\n0 0 7\\n1 1 31\\n2 0 13\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028272025
+              "timestamp": 1681058530449
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272056
+              "timestamp": 1681058530479
             }
           ]
         }
@@ -1539,31 +1541,31 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "23\\n0 0 8\\n1 1 32\\n2 0 13\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028272056
+              "timestamp": 1681058530480
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272087
+              "timestamp": 1681058530510
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "23\\n0 0 8\\n1 1 32\\n2 0 13\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028272087
+              "timestamp": 1681058530510
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272117
+              "timestamp": 1681058530541
             }
           ]
         }
@@ -1604,31 +1606,31 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "24\\n0 0 9\\n1 1 33\\n2 0 14\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028272118
+              "timestamp": 1681058530541
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272148
+              "timestamp": 1681058530572
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "24\\n0 0 9\\n1 1 33\\n2 0 14\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028272148
+              "timestamp": 1681058530572
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272178
+              "timestamp": 1681058530602
             }
           ]
         }
@@ -1669,31 +1671,31 @@ export const jsonstring = `
         }
       ],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "25\\n0 0 10\\n1 1 34\\n2 0 14\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028272179
+              "timestamp": 1681058530603
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272209
+              "timestamp": 1681058530633
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "25\\n0 0 10\\n1 1 34\\n2 0 14\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028272209
+              "timestamp": 1681058530633
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272240
+              "timestamp": 1681058530662
             }
           ]
         }
@@ -1724,31 +1726,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "26\\n0 0 11\\n1 1 35\\n2 0 14\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028272240
+              "timestamp": 1681058530663
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272270
+              "timestamp": 1681058530693
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "26\\n0 0 11\\n1 1 35\\n2 0 14\\n3 -1 1\\n1\\n0 0 3 12 26\\n",
-              "timestamp": 1681028272271
+              "timestamp": 1681058530693
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272301
+              "timestamp": 1681058530725
             }
           ]
         }
@@ -1779,31 +1781,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "27\\n0 0 12\\n1 1 36\\n2 0 15\\n3 0 11\\n0\\n",
-              "timestamp": 1681028272302
+              "timestamp": 1681058530726
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272332
+              "timestamp": 1681058530756
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "27\\n0 0 12\\n1 1 36\\n2 0 15\\n3 0 11\\n0\\n",
-              "timestamp": 1681028272332
+              "timestamp": 1681058530756
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272362
+              "timestamp": 1681058530786
             }
           ]
         }
@@ -1834,31 +1836,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "28\\n0 0 13\\n1 1 37\\n2 0 15\\n3 0 12\\n0\\n",
-              "timestamp": 1681028272363
+              "timestamp": 1681058530786
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272393
+              "timestamp": 1681058530817
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "28\\n0 0 13\\n1 1 37\\n2 0 15\\n3 0 12\\n0\\n",
-              "timestamp": 1681028272393
+              "timestamp": 1681058530817
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272424
+              "timestamp": 1681058530847
             }
           ]
         }
@@ -1889,31 +1891,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "29\\n0 0 14\\n1 1 38\\n2 0 15\\n3 0 13\\n0\\n",
-              "timestamp": 1681028272424
+              "timestamp": 1681058530848
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272455
+              "timestamp": 1681058530878
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "29\\n0 0 14\\n1 1 38\\n2 0 15\\n3 0 13\\n0\\n",
-              "timestamp": 1681028272455
+              "timestamp": 1681058530878
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272485
+              "timestamp": 1681058530909
             }
           ]
         }
@@ -1944,35 +1946,35 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "30\\n0 0 15\\n1 1 39\\n2 0 16\\n3 0 14\\n0\\n",
-              "timestamp": 1681028272486
+              "timestamp": 1681058530909
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272516
+              "timestamp": 1681058530939
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "30\\n0 0 15\\n1 1 39\\n2 0 16\\n3 0 14\\n0\\n",
-              "timestamp": 1681028272516
+              "timestamp": 1681058530939
             }
           ],
           "sent": [
             {
               "message": "1",
-              "timestamp": 1681028272546
+              "timestamp": 1681058530970
             },
             {
               "message": "-1 1 1",
-              "timestamp": 1681028272547
+              "timestamp": 1681058530970
             }
           ],
           "commandError": "Invalid planet id in line 1! They should be between 0 and 4: -1 1 1"
@@ -2004,31 +2006,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "31\\n0 0 16\\n1 1 40\\n2 0 16\\n3 0 15\\n0\\n",
-              "timestamp": 1681028272547
+              "timestamp": 1681058530970
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272578
+              "timestamp": 1681058531001
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "31\\n0 0 16\\n1 1 40\\n2 0 16\\n3 0 15\\n0\\n",
-              "timestamp": 1681028272578
+              "timestamp": 1681058531001
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272608
+              "timestamp": 1681058531031
             }
           ]
         }
@@ -2059,31 +2061,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "32\\n0 0 17\\n1 1 41\\n2 0 16\\n3 0 16\\n0\\n",
-              "timestamp": 1681028272609
+              "timestamp": 1681058531032
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272639
+              "timestamp": 1681058531062
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "32\\n0 0 17\\n1 1 41\\n2 0 16\\n3 0 16\\n0\\n",
-              "timestamp": 1681028272639
+              "timestamp": 1681058531062
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272669
+              "timestamp": 1681058531093
             }
           ]
         }
@@ -2114,31 +2116,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "33\\n0 0 18\\n1 1 42\\n2 0 17\\n3 0 17\\n0\\n",
-              "timestamp": 1681028272670
+              "timestamp": 1681058531093
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272700
+              "timestamp": 1681058531123
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "33\\n0 0 18\\n1 1 42\\n2 0 17\\n3 0 17\\n0\\n",
-              "timestamp": 1681028272700
+              "timestamp": 1681058531124
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272731
+              "timestamp": 1681058531154
             }
           ]
         }
@@ -2169,31 +2171,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "34\\n0 0 19\\n1 1 43\\n2 0 17\\n3 0 18\\n0\\n",
-              "timestamp": 1681028272731
+              "timestamp": 1681058531154
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272762
+              "timestamp": 1681058531185
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "34\\n0 0 19\\n1 1 43\\n2 0 17\\n3 0 18\\n0\\n",
-              "timestamp": 1681028272762
+              "timestamp": 1681058531185
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272792
+              "timestamp": 1681058531215
             }
           ]
         }
@@ -2224,31 +2226,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "35\\n0 0 20\\n1 1 44\\n2 0 17\\n3 0 19\\n0\\n",
-              "timestamp": 1681028272793
+              "timestamp": 1681058531216
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272822
+              "timestamp": 1681058531246
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "35\\n0 0 20\\n1 1 44\\n2 0 17\\n3 0 19\\n0\\n",
-              "timestamp": 1681028272822
+              "timestamp": 1681058531246
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272852
+              "timestamp": 1681058531277
             }
           ]
         }
@@ -2279,31 +2281,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "36\\n0 0 21\\n1 1 45\\n2 0 18\\n3 0 20\\n0\\n",
-              "timestamp": 1681028272853
+              "timestamp": 1681058531277
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272883
+              "timestamp": 1681058531308
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "36\\n0 0 21\\n1 1 45\\n2 0 18\\n3 0 20\\n0\\n",
-              "timestamp": 1681028272883
+              "timestamp": 1681058531308
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272914
+              "timestamp": 1681058531338
             }
           ]
         }
@@ -2334,31 +2336,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "37\\n0 0 22\\n1 1 46\\n2 0 18\\n3 0 21\\n0\\n",
-              "timestamp": 1681028272914
+              "timestamp": 1681058531338
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272945
+              "timestamp": 1681058531368
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "37\\n0 0 22\\n1 1 46\\n2 0 18\\n3 0 21\\n0\\n",
-              "timestamp": 1681028272945
+              "timestamp": 1681058531369
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028272975
+              "timestamp": 1681058531399
             }
           ]
         }
@@ -2389,31 +2391,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "38\\n0 0 23\\n1 1 47\\n2 0 18\\n3 0 22\\n0\\n",
-              "timestamp": 1681028272976
+              "timestamp": 1681058531399
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273006
+              "timestamp": 1681058531430
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "38\\n0 0 23\\n1 1 47\\n2 0 18\\n3 0 22\\n0\\n",
-              "timestamp": 1681028273006
+              "timestamp": 1681058531430
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273036
+              "timestamp": 1681058531460
             }
           ]
         }
@@ -2444,31 +2446,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "39\\n0 0 24\\n1 1 48\\n2 0 19\\n3 0 23\\n0\\n",
-              "timestamp": 1681028273037
+              "timestamp": 1681058531460
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273067
+              "timestamp": 1681058531491
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "39\\n0 0 24\\n1 1 48\\n2 0 19\\n3 0 23\\n0\\n",
-              "timestamp": 1681028273068
+              "timestamp": 1681058531491
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273098
+              "timestamp": 1681058531521
             }
           ]
         }
@@ -2499,31 +2501,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "40\\n0 0 25\\n1 1 49\\n2 0 19\\n3 0 24\\n0\\n",
-              "timestamp": 1681028273098
+              "timestamp": 1681058531521
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273129
+              "timestamp": 1681058531552
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "40\\n0 0 25\\n1 1 49\\n2 0 19\\n3 0 24\\n0\\n",
-              "timestamp": 1681028273129
+              "timestamp": 1681058531552
             }
           ],
           "sent": [
             {
               "message": "-1",
-              "timestamp": 1681028273159
+              "timestamp": 1681058531582
             }
           ],
           "commandError": "Expected the number of commands, but received: -1"
@@ -2555,31 +2557,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "41\\n0 0 26\\n1 1 50\\n2 0 19\\n3 0 25\\n0\\n",
-              "timestamp": 1681028273160
+              "timestamp": 1681058531583
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273190
+              "timestamp": 1681058531613
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "41\\n0 0 26\\n1 1 50\\n2 0 19\\n3 0 25\\n0\\n",
-              "timestamp": 1681028273190
+              "timestamp": 1681058531613
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273221
+              "timestamp": 1681058531642
             }
           ]
         }
@@ -2610,31 +2612,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "42\\n0 0 27\\n1 1 51\\n2 0 20\\n3 0 26\\n0\\n",
-              "timestamp": 1681028273221
+              "timestamp": 1681058531643
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273251
+              "timestamp": 1681058531673
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "42\\n0 0 27\\n1 1 51\\n2 0 20\\n3 0 26\\n0\\n",
-              "timestamp": 1681028273252
+              "timestamp": 1681058531673
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273281
+              "timestamp": 1681058531703
             }
           ]
         }
@@ -2665,31 +2667,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "43\\n0 0 28\\n1 1 52\\n2 0 20\\n3 0 27\\n0\\n",
-              "timestamp": 1681028273282
+              "timestamp": 1681058531704
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273312
+              "timestamp": 1681058531734
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "43\\n0 0 28\\n1 1 52\\n2 0 20\\n3 0 27\\n0\\n",
-              "timestamp": 1681028273312
+              "timestamp": 1681058531734
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273342
+              "timestamp": 1681058531764
             }
           ]
         }
@@ -2720,31 +2722,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "44\\n0 0 29\\n1 1 53\\n2 0 20\\n3 0 28\\n0\\n",
-              "timestamp": 1681028273343
+              "timestamp": 1681058531765
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273373
+              "timestamp": 1681058531795
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "44\\n0 0 29\\n1 1 53\\n2 0 20\\n3 0 28\\n0\\n",
-              "timestamp": 1681028273373
+              "timestamp": 1681058531795
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273404
+              "timestamp": 1681058531826
             }
           ]
         }
@@ -2775,31 +2777,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "45\\n0 0 30\\n1 1 54\\n2 0 21\\n3 0 29\\n0\\n",
-              "timestamp": 1681028273404
+              "timestamp": 1681058531826
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273434
+              "timestamp": 1681058531856
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "45\\n0 0 30\\n1 1 54\\n2 0 21\\n3 0 29\\n0\\n",
-              "timestamp": 1681028273435
+              "timestamp": 1681058531856
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273464
+              "timestamp": 1681058531886
             }
           ]
         }
@@ -2830,31 +2832,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "46\\n0 0 31\\n1 1 55\\n2 0 21\\n3 0 30\\n0\\n",
-              "timestamp": 1681028273464
+              "timestamp": 1681058531887
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273495
+              "timestamp": 1681058531917
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "46\\n0 0 31\\n1 1 55\\n2 0 21\\n3 0 30\\n0\\n",
-              "timestamp": 1681028273495
+              "timestamp": 1681058531917
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273525
+              "timestamp": 1681058531947
             }
           ]
         }
@@ -2885,31 +2887,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "47\\n0 0 32\\n1 1 56\\n2 0 21\\n3 0 31\\n0\\n",
-              "timestamp": 1681028273526
+              "timestamp": 1681058531948
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273556
+              "timestamp": 1681058531978
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "47\\n0 0 32\\n1 1 56\\n2 0 21\\n3 0 31\\n0\\n",
-              "timestamp": 1681028273556
+              "timestamp": 1681058531978
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273587
+              "timestamp": 1681058532008
             }
           ]
         }
@@ -2940,31 +2942,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "48\\n0 0 33\\n1 1 57\\n2 0 22\\n3 0 32\\n0\\n",
-              "timestamp": 1681028273587
+              "timestamp": 1681058532009
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273617
+              "timestamp": 1681058532039
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "48\\n0 0 33\\n1 1 57\\n2 0 22\\n3 0 32\\n0\\n",
-              "timestamp": 1681028273618
+              "timestamp": 1681058532039
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273648
+              "timestamp": 1681058532069
             }
           ]
         }
@@ -2995,31 +2997,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "49\\n0 0 34\\n1 1 58\\n2 0 22\\n3 0 33\\n0\\n",
-              "timestamp": 1681028273648
+              "timestamp": 1681058532069
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273679
+              "timestamp": 1681058532100
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "49\\n0 0 34\\n1 1 58\\n2 0 22\\n3 0 33\\n0\\n",
-              "timestamp": 1681028273679
+              "timestamp": 1681058532100
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273709
+              "timestamp": 1681058532130
             }
           ]
         }
@@ -3050,35 +3052,35 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "50\\n0 0 35\\n1 1 59\\n2 0 22\\n3 0 34\\n0\\n",
-              "timestamp": 1681028273710
+              "timestamp": 1681058532130
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273739
+              "timestamp": 1681058532161
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "50\\n0 0 35\\n1 1 59\\n2 0 22\\n3 0 34\\n0\\n",
-              "timestamp": 1681028273739
+              "timestamp": 1681058532161
             }
           ],
           "sent": [
             {
               "message": "1",
-              "timestamp": 1681028273770
+              "timestamp": 1681058532191
             },
             {
               "message": "-1 1 1",
-              "timestamp": 1681028273770
+              "timestamp": 1681058532191
             }
           ],
           "commandError": "Invalid planet id in line 1! They should be between 0 and 4: -1 1 1"
@@ -3110,31 +3112,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "51\\n0 0 36\\n1 1 60\\n2 0 23\\n3 0 35\\n0\\n",
-              "timestamp": 1681028273770
+              "timestamp": 1681058532191
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273800
+              "timestamp": 1681058532221
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "51\\n0 0 36\\n1 1 60\\n2 0 23\\n3 0 35\\n0\\n",
-              "timestamp": 1681028273801
+              "timestamp": 1681058532222
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273831
+              "timestamp": 1681058532252
             }
           ]
         }
@@ -3165,31 +3167,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "52\\n0 0 37\\n1 1 61\\n2 0 23\\n3 0 36\\n0\\n",
-              "timestamp": 1681028273831
+              "timestamp": 1681058532252
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273862
+              "timestamp": 1681058532283
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "52\\n0 0 37\\n1 1 61\\n2 0 23\\n3 0 36\\n0\\n",
-              "timestamp": 1681028273862
+              "timestamp": 1681058532283
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273892
+              "timestamp": 1681058532313
             }
           ]
         }
@@ -3220,31 +3222,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "53\\n0 0 38\\n1 1 62\\n2 0 23\\n3 0 37\\n0\\n",
-              "timestamp": 1681028273893
+              "timestamp": 1681058532313
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273923
+              "timestamp": 1681058532344
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "53\\n0 0 38\\n1 1 62\\n2 0 23\\n3 0 37\\n0\\n",
-              "timestamp": 1681028273923
+              "timestamp": 1681058532344
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273954
+              "timestamp": 1681058532374
             }
           ]
         }
@@ -3275,31 +3277,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "54\\n0 0 39\\n1 1 63\\n2 0 24\\n3 0 38\\n0\\n",
-              "timestamp": 1681028273954
+              "timestamp": 1681058532374
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028273984
+              "timestamp": 1681058532405
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "54\\n0 0 39\\n1 1 63\\n2 0 24\\n3 0 38\\n0\\n",
-              "timestamp": 1681028273985
+              "timestamp": 1681058532405
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274015
+              "timestamp": 1681058532435
             }
           ]
         }
@@ -3330,31 +3332,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "55\\n0 0 40\\n1 1 64\\n2 0 24\\n3 0 39\\n0\\n",
-              "timestamp": 1681028274015
+              "timestamp": 1681058532435
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274046
+              "timestamp": 1681058532466
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "55\\n0 0 40\\n1 1 64\\n2 0 24\\n3 0 39\\n0\\n",
-              "timestamp": 1681028274046
+              "timestamp": 1681058532466
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274076
+              "timestamp": 1681058532496
             }
           ]
         }
@@ -3385,31 +3387,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "56\\n0 0 41\\n1 1 65\\n2 0 24\\n3 0 40\\n0\\n",
-              "timestamp": 1681028274077
+              "timestamp": 1681058532496
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274107
+              "timestamp": 1681058532526
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "56\\n0 0 41\\n1 1 65\\n2 0 24\\n3 0 40\\n0\\n",
-              "timestamp": 1681028274107
+              "timestamp": 1681058532527
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274138
+              "timestamp": 1681058532557
             }
           ]
         }
@@ -3440,31 +3442,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "57\\n0 0 42\\n1 1 66\\n2 0 25\\n3 0 41\\n0\\n",
-              "timestamp": 1681028274138
+              "timestamp": 1681058532557
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274168
+              "timestamp": 1681058532588
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "57\\n0 0 42\\n1 1 66\\n2 0 25\\n3 0 41\\n0\\n",
-              "timestamp": 1681028274169
+              "timestamp": 1681058532588
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274198
+              "timestamp": 1681058532618
             }
           ]
         }
@@ -3495,31 +3497,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "58\\n0 0 43\\n1 1 67\\n2 0 25\\n3 0 42\\n0\\n",
-              "timestamp": 1681028274199
+              "timestamp": 1681058532618
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274228
+              "timestamp": 1681058532648
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "58\\n0 0 43\\n1 1 67\\n2 0 25\\n3 0 42\\n0\\n",
-              "timestamp": 1681028274228
+              "timestamp": 1681058532648
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274259
+              "timestamp": 1681058532679
             }
           ]
         }
@@ -3550,31 +3552,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "59\\n0 0 44\\n1 1 68\\n2 0 25\\n3 0 43\\n0\\n",
-              "timestamp": 1681028274259
+              "timestamp": 1681058532679
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274289
+              "timestamp": 1681058532709
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "59\\n0 0 44\\n1 1 68\\n2 0 25\\n3 0 43\\n0\\n",
-              "timestamp": 1681028274290
+              "timestamp": 1681058532709
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274319
+              "timestamp": 1681058532740
             }
           ]
         }
@@ -3605,31 +3607,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "60\\n0 0 45\\n1 1 69\\n2 0 26\\n3 0 44\\n0\\n",
-              "timestamp": 1681028274320
+              "timestamp": 1681058532740
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274350
+              "timestamp": 1681058532770
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "60\\n0 0 45\\n1 1 69\\n2 0 26\\n3 0 44\\n0\\n",
-              "timestamp": 1681028274350
+              "timestamp": 1681058532770
             }
           ],
           "sent": [
             {
               "message": "-1",
-              "timestamp": 1681028274380
+              "timestamp": 1681058532801
             }
           ],
           "commandError": "Expected the number of commands, but received: -1"
@@ -3661,31 +3663,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "61\\n0 0 46\\n1 1 70\\n2 0 26\\n3 0 45\\n0\\n",
-              "timestamp": 1681028274381
+              "timestamp": 1681058532801
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274411
+              "timestamp": 1681058532831
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "61\\n0 0 46\\n1 1 70\\n2 0 26\\n3 0 45\\n0\\n",
-              "timestamp": 1681028274412
+              "timestamp": 1681058532831
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274441
+              "timestamp": 1681058532862
             }
           ]
         }
@@ -3716,31 +3718,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "62\\n0 0 47\\n1 1 71\\n2 0 26\\n3 0 46\\n0\\n",
-              "timestamp": 1681028274441
+              "timestamp": 1681058532862
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274472
+              "timestamp": 1681058532892
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "62\\n0 0 47\\n1 1 71\\n2 0 26\\n3 0 46\\n0\\n",
-              "timestamp": 1681028274472
+              "timestamp": 1681058532892
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274502
+              "timestamp": 1681058532921
             }
           ]
         }
@@ -3771,31 +3773,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "63\\n0 0 48\\n1 1 72\\n2 0 27\\n3 0 47\\n0\\n",
-              "timestamp": 1681028274503
+              "timestamp": 1681058532922
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274533
+              "timestamp": 1681058532952
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "63\\n0 0 48\\n1 1 72\\n2 0 27\\n3 0 47\\n0\\n",
-              "timestamp": 1681028274533
+              "timestamp": 1681058532952
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274564
+              "timestamp": 1681058532982
             }
           ]
         }
@@ -3826,31 +3828,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "64\\n0 0 49\\n1 1 73\\n2 0 27\\n3 0 48\\n0\\n",
-              "timestamp": 1681028274564
+              "timestamp": 1681058532983
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274595
+              "timestamp": 1681058533013
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "64\\n0 0 49\\n1 1 73\\n2 0 27\\n3 0 48\\n0\\n",
-              "timestamp": 1681028274595
+              "timestamp": 1681058533013
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274625
+              "timestamp": 1681058533043
             }
           ]
         }
@@ -3881,31 +3883,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "65\\n0 0 50\\n1 1 74\\n2 0 27\\n3 0 49\\n0\\n",
-              "timestamp": 1681028274626
+              "timestamp": 1681058533044
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274655
+              "timestamp": 1681058533074
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "65\\n0 0 50\\n1 1 74\\n2 0 27\\n3 0 49\\n0\\n",
-              "timestamp": 1681028274655
+              "timestamp": 1681058533074
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274686
+              "timestamp": 1681058533104
             }
           ]
         }
@@ -3936,31 +3938,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "66\\n0 0 51\\n1 1 75\\n2 0 28\\n3 0 50\\n0\\n",
-              "timestamp": 1681028274686
+              "timestamp": 1681058533104
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274716
+              "timestamp": 1681058533135
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "66\\n0 0 51\\n1 1 75\\n2 0 28\\n3 0 50\\n0\\n",
-              "timestamp": 1681028274717
+              "timestamp": 1681058533135
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274747
+              "timestamp": 1681058533165
             }
           ]
         }
@@ -3991,31 +3993,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "67\\n0 0 52\\n1 1 76\\n2 0 28\\n3 0 51\\n0\\n",
-              "timestamp": 1681028274747
+              "timestamp": 1681058533166
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274778
+              "timestamp": 1681058533196
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "67\\n0 0 52\\n1 1 76\\n2 0 28\\n3 0 51\\n0\\n",
-              "timestamp": 1681028274778
+              "timestamp": 1681058533196
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274808
+              "timestamp": 1681058533227
             }
           ]
         }
@@ -4046,31 +4048,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "68\\n0 0 53\\n1 1 77\\n2 0 28\\n3 0 52\\n0\\n",
-              "timestamp": 1681028274809
+              "timestamp": 1681058533227
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274839
+              "timestamp": 1681058533258
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "68\\n0 0 53\\n1 1 77\\n2 0 28\\n3 0 52\\n0\\n",
-              "timestamp": 1681028274839
+              "timestamp": 1681058533258
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274869
+              "timestamp": 1681058533288
             }
           ]
         }
@@ -4101,31 +4103,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "69\\n0 0 54\\n1 1 78\\n2 0 29\\n3 0 53\\n0\\n",
-              "timestamp": 1681028274870
+              "timestamp": 1681058533289
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274900
+              "timestamp": 1681058533319
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "69\\n0 0 54\\n1 1 78\\n2 0 29\\n3 0 53\\n0\\n",
-              "timestamp": 1681028274900
+              "timestamp": 1681058533319
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274931
+              "timestamp": 1681058533350
             }
           ]
         }
@@ -4156,35 +4158,35 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "70\\n0 0 55\\n1 1 79\\n2 0 29\\n3 0 54\\n0\\n",
-              "timestamp": 1681028274931
+              "timestamp": 1681058533350
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028274961
+              "timestamp": 1681058533380
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "70\\n0 0 55\\n1 1 79\\n2 0 29\\n3 0 54\\n0\\n",
-              "timestamp": 1681028274961
+              "timestamp": 1681058533381
             }
           ],
           "sent": [
             {
               "message": "1",
-              "timestamp": 1681028274992
+              "timestamp": 1681058533411
             },
             {
               "message": "-1 1 1",
-              "timestamp": 1681028274992
+              "timestamp": 1681058533411
             }
           ],
           "commandError": "Invalid planet id in line 1! They should be between 0 and 4: -1 1 1"
@@ -4216,31 +4218,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "71\\n0 0 56\\n1 1 80\\n2 0 29\\n3 0 55\\n0\\n",
-              "timestamp": 1681028274992
+              "timestamp": 1681058533412
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275023
+              "timestamp": 1681058533442
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "71\\n0 0 56\\n1 1 80\\n2 0 29\\n3 0 55\\n0\\n",
-              "timestamp": 1681028275023
+              "timestamp": 1681058533442
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275053
+              "timestamp": 1681058533472
             }
           ]
         }
@@ -4271,31 +4273,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "72\\n0 0 57\\n1 1 81\\n2 0 30\\n3 0 56\\n0\\n",
-              "timestamp": 1681028275053
+              "timestamp": 1681058533473
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275084
+              "timestamp": 1681058533503
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "72\\n0 0 57\\n1 1 81\\n2 0 30\\n3 0 56\\n0\\n",
-              "timestamp": 1681028275084
+              "timestamp": 1681058533503
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275114
+              "timestamp": 1681058533534
             }
           ]
         }
@@ -4326,31 +4328,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "73\\n0 0 58\\n1 1 82\\n2 0 30\\n3 0 57\\n0\\n",
-              "timestamp": 1681028275115
+              "timestamp": 1681058533534
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275145
+              "timestamp": 1681058533565
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "73\\n0 0 58\\n1 1 82\\n2 0 30\\n3 0 57\\n0\\n",
-              "timestamp": 1681028275145
+              "timestamp": 1681058533565
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275175
+              "timestamp": 1681058533595
             }
           ]
         }
@@ -4381,31 +4383,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "74\\n0 0 59\\n1 1 83\\n2 0 30\\n3 0 58\\n0\\n",
-              "timestamp": 1681028275176
+              "timestamp": 1681058533596
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275206
+              "timestamp": 1681058533626
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "74\\n0 0 59\\n1 1 83\\n2 0 30\\n3 0 58\\n0\\n",
-              "timestamp": 1681028275206
+              "timestamp": 1681058533626
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275236
+              "timestamp": 1681058533657
             }
           ]
         }
@@ -4436,31 +4438,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "75\\n0 0 60\\n1 1 84\\n2 0 31\\n3 0 59\\n0\\n",
-              "timestamp": 1681028275237
+              "timestamp": 1681058533657
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275267
+              "timestamp": 1681058533688
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "75\\n0 0 60\\n1 1 84\\n2 0 31\\n3 0 59\\n0\\n",
-              "timestamp": 1681028275267
+              "timestamp": 1681058533688
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275298
+              "timestamp": 1681058533718
             }
           ]
         }
@@ -4491,31 +4493,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "76\\n0 0 61\\n1 1 85\\n2 0 31\\n3 0 60\\n0\\n",
-              "timestamp": 1681028275298
+              "timestamp": 1681058533719
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275328
+              "timestamp": 1681058533749
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "76\\n0 0 61\\n1 1 85\\n2 0 31\\n3 0 60\\n0\\n",
-              "timestamp": 1681028275328
+              "timestamp": 1681058533749
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275359
+              "timestamp": 1681058533778
             }
           ]
         }
@@ -4546,31 +4548,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "77\\n0 0 62\\n1 1 86\\n2 0 31\\n3 0 61\\n0\\n",
-              "timestamp": 1681028275359
+              "timestamp": 1681058533779
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275390
+              "timestamp": 1681058533809
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "77\\n0 0 62\\n1 1 86\\n2 0 31\\n3 0 61\\n0\\n",
-              "timestamp": 1681028275390
+              "timestamp": 1681058533809
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275419
+              "timestamp": 1681058533839
             }
           ]
         }
@@ -4601,31 +4603,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "78\\n0 0 63\\n1 1 87\\n2 0 32\\n3 0 62\\n0\\n",
-              "timestamp": 1681028275419
+              "timestamp": 1681058533840
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275449
+              "timestamp": 1681058533870
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "78\\n0 0 63\\n1 1 87\\n2 0 32\\n3 0 62\\n0\\n",
-              "timestamp": 1681028275449
+              "timestamp": 1681058533870
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275480
+              "timestamp": 1681058533899
             }
           ]
         }
@@ -4656,31 +4658,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "79\\n0 0 64\\n1 1 88\\n2 0 32\\n3 0 63\\n0\\n",
-              "timestamp": 1681028275480
+              "timestamp": 1681058533900
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275510
+              "timestamp": 1681058533930
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "79\\n0 0 64\\n1 1 88\\n2 0 32\\n3 0 63\\n0\\n",
-              "timestamp": 1681028275511
+              "timestamp": 1681058533930
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275540
+              "timestamp": 1681058533959
             }
           ]
         }
@@ -4711,31 +4713,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "80\\n0 0 65\\n1 1 89\\n2 0 32\\n3 0 64\\n0\\n",
-              "timestamp": 1681028275540
+              "timestamp": 1681058533960
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275571
+              "timestamp": 1681058533990
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "80\\n0 0 65\\n1 1 89\\n2 0 32\\n3 0 64\\n0\\n",
-              "timestamp": 1681028275571
+              "timestamp": 1681058533990
             }
           ],
           "sent": [
             {
               "message": "-1",
-              "timestamp": 1681028275601
+              "timestamp": 1681058534021
             }
           ],
           "commandError": "Expected the number of commands, but received: -1"
@@ -4767,31 +4769,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "81\\n0 0 66\\n1 1 90\\n2 0 33\\n3 0 65\\n0\\n",
-              "timestamp": 1681028275602
+              "timestamp": 1681058534021
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275632
+              "timestamp": 1681058534052
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "81\\n0 0 66\\n1 1 90\\n2 0 33\\n3 0 65\\n0\\n",
-              "timestamp": 1681028275632
+              "timestamp": 1681058534052
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275662
+              "timestamp": 1681058534082
             }
           ]
         }
@@ -4822,31 +4824,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "82\\n0 0 67\\n1 1 91\\n2 0 33\\n3 0 66\\n0\\n",
-              "timestamp": 1681028275664
+              "timestamp": 1681058534084
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275694
+              "timestamp": 1681058534114
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "82\\n0 0 67\\n1 1 91\\n2 0 33\\n3 0 66\\n0\\n",
-              "timestamp": 1681028275694
+              "timestamp": 1681058534114
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275725
+              "timestamp": 1681058534145
             }
           ]
         }
@@ -4877,31 +4879,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "83\\n0 0 68\\n1 1 92\\n2 0 33\\n3 0 67\\n0\\n",
-              "timestamp": 1681028275725
+              "timestamp": 1681058534145
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275755
+              "timestamp": 1681058534175
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "83\\n0 0 68\\n1 1 92\\n2 0 33\\n3 0 67\\n0\\n",
-              "timestamp": 1681028275755
+              "timestamp": 1681058534175
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275786
+              "timestamp": 1681058534206
             }
           ]
         }
@@ -4932,31 +4934,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "84\\n0 0 69\\n1 1 93\\n2 0 34\\n3 0 68\\n0\\n",
-              "timestamp": 1681028275786
+              "timestamp": 1681058534206
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275817
+              "timestamp": 1681058534236
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "84\\n0 0 69\\n1 1 93\\n2 0 34\\n3 0 68\\n0\\n",
-              "timestamp": 1681028275817
+              "timestamp": 1681058534236
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275847
+              "timestamp": 1681058534267
             }
           ]
         }
@@ -4987,31 +4989,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "85\\n0 0 70\\n1 1 94\\n2 0 34\\n3 0 69\\n0\\n",
-              "timestamp": 1681028275848
+              "timestamp": 1681058534267
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275878
+              "timestamp": 1681058534297
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "85\\n0 0 70\\n1 1 94\\n2 0 34\\n3 0 69\\n0\\n",
-              "timestamp": 1681028275878
+              "timestamp": 1681058534297
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275908
+              "timestamp": 1681058534328
             }
           ]
         }
@@ -5042,31 +5044,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "86\\n0 0 71\\n1 1 95\\n2 0 34\\n3 0 70\\n0\\n",
-              "timestamp": 1681028275909
+              "timestamp": 1681058534328
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275939
+              "timestamp": 1681058534359
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "86\\n0 0 71\\n1 1 95\\n2 0 34\\n3 0 70\\n0\\n",
-              "timestamp": 1681028275939
+              "timestamp": 1681058534359
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028275970
+              "timestamp": 1681058534389
             }
           ]
         }
@@ -5097,31 +5099,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "87\\n0 0 72\\n1 1 96\\n2 0 35\\n3 0 71\\n0\\n",
-              "timestamp": 1681028275970
+              "timestamp": 1681058534389
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276000
+              "timestamp": 1681058534420
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "87\\n0 0 72\\n1 1 96\\n2 0 35\\n3 0 71\\n0\\n",
-              "timestamp": 1681028276000
+              "timestamp": 1681058534420
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276031
+              "timestamp": 1681058534450
             }
           ]
         }
@@ -5152,31 +5154,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "88\\n0 0 73\\n1 1 97\\n2 0 35\\n3 0 72\\n0\\n",
-              "timestamp": 1681028276031
+              "timestamp": 1681058534450
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276062
+              "timestamp": 1681058534481
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "88\\n0 0 73\\n1 1 97\\n2 0 35\\n3 0 72\\n0\\n",
-              "timestamp": 1681028276062
+              "timestamp": 1681058534481
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276092
+              "timestamp": 1681058534511
             }
           ]
         }
@@ -5207,31 +5209,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "89\\n0 0 74\\n1 1 98\\n2 0 35\\n3 0 73\\n0\\n",
-              "timestamp": 1681028276093
+              "timestamp": 1681058534512
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276123
+              "timestamp": 1681058534542
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "89\\n0 0 74\\n1 1 98\\n2 0 35\\n3 0 73\\n0\\n",
-              "timestamp": 1681028276123
+              "timestamp": 1681058534542
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276154
+              "timestamp": 1681058534572
             }
           ]
         }
@@ -5262,35 +5264,35 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "90\\n0 0 75\\n1 1 99\\n2 0 36\\n3 0 74\\n0\\n",
-              "timestamp": 1681028276154
+              "timestamp": 1681058534573
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276184
+              "timestamp": 1681058534603
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "90\\n0 0 75\\n1 1 99\\n2 0 36\\n3 0 74\\n0\\n",
-              "timestamp": 1681028276185
+              "timestamp": 1681058534603
             }
           ],
           "sent": [
             {
               "message": "1",
-              "timestamp": 1681028276214
+              "timestamp": 1681058534632
             },
             {
               "message": "-1 1 1",
-              "timestamp": 1681028276214
+              "timestamp": 1681058534633
             }
           ],
           "commandError": "Invalid planet id in line 1! They should be between 0 and 4: -1 1 1"
@@ -5322,31 +5324,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "91\\n0 0 76\\n1 1 100\\n2 0 36\\n3 0 75\\n0\\n",
-              "timestamp": 1681028276215
+              "timestamp": 1681058534633
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276244
+              "timestamp": 1681058534664
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "91\\n0 0 76\\n1 1 100\\n2 0 36\\n3 0 75\\n0\\n",
-              "timestamp": 1681028276244
+              "timestamp": 1681058534664
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276274
+              "timestamp": 1681058534694
             }
           ]
         }
@@ -5377,31 +5379,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "92\\n0 0 77\\n1 1 101\\n2 0 36\\n3 0 76\\n0\\n",
-              "timestamp": 1681028276275
+              "timestamp": 1681058534695
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276305
+              "timestamp": 1681058534725
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "92\\n0 0 77\\n1 1 101\\n2 0 36\\n3 0 76\\n0\\n",
-              "timestamp": 1681028276305
+              "timestamp": 1681058534725
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276336
+              "timestamp": 1681058534756
             }
           ]
         }
@@ -5432,31 +5434,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "93\\n0 0 78\\n1 1 102\\n2 0 37\\n3 0 77\\n0\\n",
-              "timestamp": 1681028276336
+              "timestamp": 1681058534756
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276367
+              "timestamp": 1681058534785
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "93\\n0 0 78\\n1 1 102\\n2 0 37\\n3 0 77\\n0\\n",
-              "timestamp": 1681028276367
+              "timestamp": 1681058534786
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276397
+              "timestamp": 1681058534816
             }
           ]
         }
@@ -5487,31 +5489,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "94\\n0 0 79\\n1 1 103\\n2 0 37\\n3 0 78\\n0\\n",
-              "timestamp": 1681028276398
+              "timestamp": 1681058534817
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276427
+              "timestamp": 1681058534847
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "94\\n0 0 79\\n1 1 103\\n2 0 37\\n3 0 78\\n0\\n",
-              "timestamp": 1681028276427
+              "timestamp": 1681058534847
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276458
+              "timestamp": 1681058534876
             }
           ]
         }
@@ -5542,31 +5544,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "95\\n0 0 80\\n1 1 104\\n2 0 37\\n3 0 79\\n0\\n",
-              "timestamp": 1681028276458
+              "timestamp": 1681058534877
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276489
+              "timestamp": 1681058534907
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "95\\n0 0 80\\n1 1 104\\n2 0 37\\n3 0 79\\n0\\n",
-              "timestamp": 1681028276489
+              "timestamp": 1681058534907
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276519
+              "timestamp": 1681058534938
             }
           ]
         }
@@ -5597,31 +5599,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "96\\n0 0 81\\n1 1 105\\n2 0 38\\n3 0 80\\n0\\n",
-              "timestamp": 1681028276520
+              "timestamp": 1681058534938
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276549
+              "timestamp": 1681058534968
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "96\\n0 0 81\\n1 1 105\\n2 0 38\\n3 0 80\\n0\\n",
-              "timestamp": 1681028276549
+              "timestamp": 1681058534969
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276580
+              "timestamp": 1681058534999
             }
           ]
         }
@@ -5652,31 +5654,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "97\\n0 0 82\\n1 1 106\\n2 0 38\\n3 0 81\\n0\\n",
-              "timestamp": 1681028276580
+              "timestamp": 1681058534999
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276611
+              "timestamp": 1681058535030
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "97\\n0 0 82\\n1 1 106\\n2 0 38\\n3 0 81\\n0\\n",
-              "timestamp": 1681028276611
+              "timestamp": 1681058535030
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276641
+              "timestamp": 1681058535060
             }
           ]
         }
@@ -5707,31 +5709,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "98\\n0 0 83\\n1 1 107\\n2 0 38\\n3 0 82\\n0\\n",
-              "timestamp": 1681028276642
+              "timestamp": 1681058535061
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276671
+              "timestamp": 1681058535091
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "98\\n0 0 83\\n1 1 107\\n2 0 38\\n3 0 82\\n0\\n",
-              "timestamp": 1681028276671
+              "timestamp": 1681058535091
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276702
+              "timestamp": 1681058535121
             }
           ]
         }
@@ -5762,31 +5764,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "99\\n0 0 84\\n1 1 108\\n2 0 39\\n3 0 83\\n0\\n",
-              "timestamp": 1681028276702
+              "timestamp": 1681058535122
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276732
+              "timestamp": 1681058535152
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "99\\n0 0 84\\n1 1 108\\n2 0 39\\n3 0 83\\n0\\n",
-              "timestamp": 1681028276733
+              "timestamp": 1681058535152
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276763
+              "timestamp": 1681058535181
             }
           ]
         }
@@ -5817,31 +5819,31 @@ export const jsonstring = `
       ],
       "troops": [],
       "messages": {
-        "bot1": {
+        "0": {
           "received": [
             {
               "message": "100\\n0 0 85\\n1 1 109\\n2 0 39\\n3 0 84\\n0\\n",
-              "timestamp": 1681028276764
+              "timestamp": 1681058535182
             }
           ],
           "sent": [
             {
               "message": "0",
-              "timestamp": 1681028276794
+              "timestamp": 1681058535212
             }
           ]
         },
-        "bot2": {
+        "1": {
           "received": [
             {
               "message": "100\\n0 0 85\\n1 1 109\\n2 0 39\\n3 0 84\\n0\\n",
-              "timestamp": 1681028276794
+              "timestamp": 1681058535212
             }
           ],
           "sent": [
             {
               "message": "-1",
-              "timestamp": 1681028276825
+              "timestamp": 1681058535243
             }
           ],
           "commandError": "Expected the number of commands, but received: -1"

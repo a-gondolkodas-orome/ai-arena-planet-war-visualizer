@@ -1,5 +1,5 @@
 {
-  "name": "@leanil/nanowar-visualizer",
+  "name": "@kristofy/nanowar-visualizer",
   "version": "0.0.11",
   "type": "module",
   "peerDependencies": {
