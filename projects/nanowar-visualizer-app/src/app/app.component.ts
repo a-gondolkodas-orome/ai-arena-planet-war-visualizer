@@ -8,5 +8,5 @@ import { jsonstring } from './test';
 })
 export class AppComponent {
   public jsonstring = jsonstring;
-  public bot_id: string = "bot1";
+  public bot_id: string = "0";
 }

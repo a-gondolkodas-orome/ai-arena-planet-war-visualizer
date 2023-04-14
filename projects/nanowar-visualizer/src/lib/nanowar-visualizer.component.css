@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Candara', Times, serif;
 }
 
 #container {
@@ -32,6 +33,7 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  overflow: scroll;
 }
 
 .panel * {
@@ -83,8 +85,12 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: max-content;
+  width: 100%;
   height: auto;
+}
+
+.button-container > div {
+  width: 100%;
 }
 
 .d-flex {
@@ -99,6 +105,11 @@
   width: 100%;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .clickable {
   cursor: pointer;
@@ -118,6 +129,7 @@
 .messages {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  width: 100%;
 }
 
 .messages h1 {
@@ -138,7 +150,8 @@
 .message {
   width: 100%;
   height: auto;
-  margin: 10px;
+  margin: 20px;
+  display: flex;
 }
 
 
@@ -165,16 +178,17 @@
   width: 100%;
   height: auto;
   padding-bottom: 10px;
+  white-space: pre-line;
 }
 
 .message-time {
   width: 100%;
   height: auto;
-  /* make it like a date, smaller, grayer */
   font-size: small;
   color: rgba(0, 0, 0, 0.5);
   font-style: italic;
-  text-align: right;
+  display: inline-block;
+  padding-right: 10px;
 }
 
 

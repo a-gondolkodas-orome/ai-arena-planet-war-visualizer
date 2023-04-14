@@ -5,7 +5,7 @@ export class BotMessage {
   public timestamp: Date | null;
 
   public constructor(json_bot_message: JsonMessage) {
-    this.message = json_bot_message.message;
+    this.message = json_bot_message.message;//.replace(/\n/g, '<br/>');
     this.timestamp = !!json_bot_message.timestamp ? new Date(json_bot_message.timestamp) : null;
   }
 }
