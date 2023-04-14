@@ -12,6 +12,18 @@ export interface JsonInit {
 export interface JsonTick {
   planets: JsonPlanet[];
   troops: JsonTroops[];
+  messages: { [bot_id: string] : JsonBotMessage; };
+}
+
+export interface JsonBotMessage {
+  received: JsonMessage[];
+  sent: JsonMessage[];
+  commandError?: string | null;
+}
+
+export interface JsonMessage {
+  message: string;
+  timestamp: number | null;
 }
 
 export interface JsonBoard {

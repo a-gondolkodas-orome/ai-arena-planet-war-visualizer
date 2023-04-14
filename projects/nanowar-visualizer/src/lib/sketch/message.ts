@@ -1,0 +1,23 @@
+import { JsonBotMessage, JsonMessage } from './interfaces';
+
+export class BotMessage {
+  public message: string;
+  public timestamp: Date | null;
+
+  public constructor(json_bot_message: JsonMessage) {
+    this.message = json_bot_message.message;
+    this.timestamp = !!json_bot_message.timestamp ? new Date(json_bot_message.timestamp) : null;
+  }
+}
+
+export class BotMessageBundle {
+  public received: BotMessage[];
+  public sent: BotMessage[];
+  public error: BotMessage[];
+
+  constructor(json_bot_message: JsonBotMessage) {
+    this.received = json_bot_message.received.map((x) => new BotMessage(x));
+    this.sent = json_bot_message.sent.map((x) => new BotMessage(x));
+    this.error = json_bot_message.commandError ? [new BotMessage({ message: json_bot_message.commandError, timestamp: null })] : [];
+  }
+}

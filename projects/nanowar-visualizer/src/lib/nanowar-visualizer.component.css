@@ -87,6 +87,94 @@
   height: auto;
 }
 
+.d-flex {
+  display: flex;
+}
+
+.d-flex .flex-column {
+  flex-direction: column;
+}
+
 #fps-range {
   width: 100%;
 }
+
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  /*Ligthen the darken of the background of the btton*/
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+.messages-header {
+  font-size: medium;
+  text-transform: uppercase;
+}
+
+.messages {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.messages h1 {
+  font-size: small;
+  text-transform: uppercase;
+}
+
+
+.messages div {
+  padding: 0;
+}
+
+.messages > div {
+  margin-bottom: 1rem;
+  padding: 10px;
+}
+
+.message {
+  width: 100%;
+  height: auto;
+  margin: 10px;
+}
+
+
+.sent-message {
+  background-color: rgba(100, 255, 100, 255);
+  border-radius: 10px;
+}
+
+.received-message {
+  background-color: rgba(40, 200, 40, 255);
+  border-radius: 10px;
+}
+
+.error-message {
+  background-color: lighten(10%, green)
+}
+
+.message-content {
+  width: 100%;
+  height: auto;
+}
+
+.message-text {
+  width: 100%;
+  height: auto;
+  padding-bottom: 10px;
+}
+
+.message-time {
+  width: 100%;
+  height: auto;
+  /* make it like a date, smaller, grayer */
+  font-size: small;
+  color: rgba(0, 0, 0, 0.5);
+  font-style: italic;
+  text-align: right;
+}
+
+
