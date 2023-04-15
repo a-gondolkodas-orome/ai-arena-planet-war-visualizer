@@ -1,24 +1,31 @@
-import { Component, Input, OnChanges } from '@angular/core';
-import { faAngleRight, faAngleLeft, faAngleDoubleLeft, faAngleDoubleRight, faPause, faPlay } from '@fortawesome/free-solid-svg-icons';import p5 from 'p5';
-import { GameModule } from './sketch/game.module';
+import { AfterViewInit, Component, Input, OnChanges, OnInit } from "@angular/core";
+import {
+  faAngleRight,
+  faAngleLeft,
+  faAngleDoubleLeft,
+  faAngleDoubleRight,
+  faPause,
+  faPlay,
+} from "@fortawesome/free-solid-svg-icons";
+import p5 from "p5";
+import { GameModule } from "./sketch/game.module";
 import {
   JsonBoard,
-  JsonBotMessage,
   JsonInit,
   JsonLog,
   JsonPlanetInit,
   JsonPlayer,
   JsonTick,
-} from './sketch/interfaces';
-import { BotMessageBundle } from './sketch/message';
+} from "./sketch/interfaces";
+import { BotMessageBundle } from "./sketch/message";
 
 
 @Component({
-  selector: 'lib-nanowar-visualizer',
-  templateUrl: './nanowar-visualizer.component.html',
-  styleUrls: ['./nanowar-visualizer.component.css'],
+  selector: "lib-nanowar-visualizer",
+  templateUrl: "./nanowar-visualizer.component.html",
+  styleUrls: ["./nanowar-visualizer.component.css"],
 })
-export class NanowarVisualizerComponent implements OnChanges {
+export class NanowarVisualizerComponent implements OnChanges, AfterViewInit {
   @Input() public jsonstring!: string;
   @Input() public bot_id!: string;
 
@@ -29,8 +36,7 @@ export class NanowarVisualizerComponent implements OnChanges {
   public pause_icon = faPause;
   public star_icon = faPlay;
   public messages: BotMessageBundle | null = null;
-  
-  private last_set_time = 0;
+
   public time = 0;
   public last = 0;
   public isAnimating = false;
@@ -41,6 +47,8 @@ export class NanowarVisualizerComponent implements OnChanges {
   private accFrameTime = 0;
 
 
+  private jsonLog?: JsonLog;
+
   private sketch(ctx: p5): void {
     let game: GameModule;
     let updates: JsonTick[];
@@ -48,30 +56,18 @@ export class NanowarVisualizerComponent implements OnChanges {
     let backgroundImage: p5.Image;
     let last_tick = -1;
     ctx.setup = () => {
-      const jsonObj: JsonLog = JSON.parse(this.jsonstring);
-      const { init, ticks }: { init: JsonInit; ticks: JsonTick[] } = jsonObj;
+      const { init, ticks }: { init: JsonInit; ticks: JsonTick[] } = (this.jsonLog = JSON.parse(this.jsonstring));
       const {
         board,
         planets,
         players,
       }: { board: JsonBoard; planets: JsonPlanetInit[]; players: JsonPlayer[] } = init;
-      const { width, height }: { width: number; height: number } = board;
-
-      const clientHeight =
-        document.querySelector<HTMLDivElement>('#container')?.clientHeight ?? 600;
-      const clientWidth = document.querySelector<HTMLDivElement>('#canvas')?.clientWidth ?? 800;
-      const wratio = clientWidth / width;
-      const hratio = clientHeight / height;
-      const min_ratio = Math.min(wratio, hratio);
-
-      const C = ctx.createCanvas(width * min_ratio, height * min_ratio);
-      C.parent('canvas');
-      backgroundImage = ctx.loadImage('./assets/bg1.png');
-
-
-
-      scale = min_ratio;
-      ctx.scale(min_ratio);
+      const canvasProps = this.getCanvasProps(board);
+      const C = ctx.createCanvas(canvasProps.width, canvasProps.height);
+      scale = canvasProps.scale;
+      C.parent("canvas");
+      backgroundImage = ctx.loadImage("./assets/bg1.png");
+      ctx.scale(scale);
 
       updates = ticks;
       this.last = updates.length - 1;
@@ -89,18 +85,17 @@ export class NanowarVisualizerComponent implements OnChanges {
         this.accFrameTime += deltaTime / 1000;
 
         const d = Math.floor(this.accFrameTime * this.fps);
-        this.accFrameTime = this.accFrameTime - (d * 1) / this.fps;
+        this.accFrameTime = this.accFrameTime - d / this.fps;
         this.time = Math.min(this.time + d, this.last);
       }
 
       if (this.time <= this.last && this.time >= 0) {
         ctx.scale(scale);
-        ctx.background(backgroundImage ?? '#000000');
+        ctx.background(backgroundImage ?? "#000000");
         game.update(updates[this.time]);
-        updates[this.time]?.messages[this.bot_id];
         game.render(ctx, this.isAnimating ? this.accFrameTime * this.fps : 1);
         game.troops = [];
-        if(last_tick != this.time){
+        if (last_tick != this.time) {
           this.messages = new BotMessageBundle(updates[this.time].messages[this.bot_id]);
         }
         last_tick = this.time;
@@ -113,7 +108,17 @@ export class NanowarVisualizerComponent implements OnChanges {
     };
   }
 
-  onTickChanged(new_tick: number | null): void{
+  private getCanvasProps({ width, height }: JsonBoard) {
+    const clientHeight =
+      document.querySelector<HTMLDivElement>("#container")?.clientHeight ?? 600;
+    const clientWidth = document.querySelector<HTMLDivElement>("#canvas")?.clientWidth ?? 800;
+    const wratio = clientWidth / width;
+    const hratio = clientHeight / height;
+    const min_ratio = Math.min(wratio, hratio);
+    return { width: width * min_ratio, height: height * min_ratio, scale: min_ratio };
+  }
+
+  onTickChanged(new_tick: number | null): void {
     let selected_tick: number = new_tick ?? this.time;
     selected_tick = Math.min(selected_tick, this.last);
     selected_tick = Math.max(selected_tick, 0);
@@ -122,7 +127,7 @@ export class NanowarVisualizerComponent implements OnChanges {
     this.instance?.redraw();
   }
 
-  onTickInputLostFocus(): void{
+  onTickInputLostFocus(): void {
     // TODO(Kristofy): There is a bug, that when the input loses focus after deleting the value, the user cannot see, that the value is still the last valid value
     // let tmp = this.time;
     // this.onTickChanged(this.last_time);
@@ -142,7 +147,7 @@ export class NanowarVisualizerComponent implements OnChanges {
     this.instance?.redraw();
   }
 
-  restartButtonClickedEvent(): void { 
+  restartButtonClickedEvent(): void {
     this.time = 0;
     this.animateEndButtonClickedEvent();
     this.instance?.redraw();
@@ -174,5 +179,15 @@ export class NanowarVisualizerComponent implements OnChanges {
     if (this.jsonstring) {
       this.instance = new p5(this.sketch.bind(this));
     }
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      if (this.jsonLog) {
+        const { width, height, scale } = this.getCanvasProps(this.jsonLog.init.board);
+        this.instance?.resizeCanvas(width, height);
+        this.instance?.scale(scale);
+      }
+    }, 0);
   }
 }
