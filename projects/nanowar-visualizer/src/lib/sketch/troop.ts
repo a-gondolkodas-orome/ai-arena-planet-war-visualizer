@@ -38,8 +38,8 @@ export class Troop {
     const dy: number = b.y - a.y;
     const angle = Math.atan2(dy, dx);
 
-    const lenfrom: number = (this.progress / this.distance) * Math.sqrt(dx * dx + dy * dy);
-    const lento: number = ((this.progress + 1) / this.distance) * Math.sqrt(dx * dx + dy * dy);
+    const lenfrom: number = ((this.progress - 1) / this.distance) * Math.sqrt(dx * dx + dy * dy);
+    const lento: number = (this.progress / this.distance) * Math.sqrt(dx * dx + dy * dy);
     const len = ctx.lerp(lenfrom, lento, frame_percent);
 
     const Q: Point = new Point(Math.cos(angle) * len, Math.sin(angle) * len);
