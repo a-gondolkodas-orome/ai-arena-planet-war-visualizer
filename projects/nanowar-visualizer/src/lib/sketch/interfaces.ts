@@ -37,6 +37,7 @@ export interface JsonPlanetInit {
   x: number;
   y: number;
   size: number;
+  production: number;
   population: number;
   player: number;
 }

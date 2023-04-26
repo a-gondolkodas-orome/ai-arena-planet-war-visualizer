@@ -33,6 +33,7 @@ export class GameModule {
     x,
     y,
     size,
+    production,
     population,
     player,
   }: {
@@ -40,10 +41,11 @@ export class GameModule {
     x: number;
     y: number;
     size: number;
+    production: number;
     population: number;
     player: number;
   }): Planet {
-    return new Planet(id, x, y, size, population, this.players[player] || null);
+    return new Planet(id, x, y, size, production, population, this.players[player] || null);
   }
 
   createTroops({

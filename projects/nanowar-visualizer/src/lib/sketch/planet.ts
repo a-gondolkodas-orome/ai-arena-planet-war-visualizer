@@ -7,13 +7,15 @@ export class Planet {
   uid: number;
   pos: Point;
   size: number;
+  production: number;
   population: number;
   player?: Player;
 
-  constructor(id: number, x: number, y: number, size: number, population: number, player: Player) {
+  constructor(id: number, x: number, y: number, size: number, production: number, population: number, player: Player) {
     this.uid = id;
     this.pos = new Point(x, y);
     this.size = size * 5;
+    this.production = production;
     this.population = population;
     this.player = player;
   }
@@ -40,7 +42,7 @@ export class Planet {
     ctx.textSize(12);
     ctx.text(this.population, this.pos.x, this.pos.y);
     ctx.textSize(6);
-    ctx.text(`${this.uid}, ${this.size}`, this.pos.x, this.pos.y - 12);
+    ctx.text(`${this.uid}, ${this.production}`, this.pos.x, this.pos.y - 12);
     ctx.textSize(12);
     ctx.noStroke();
   }
