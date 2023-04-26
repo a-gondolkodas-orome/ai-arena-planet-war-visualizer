@@ -8,19 +8,19 @@
         <div class="d-flex flex-column bordered">
           <h1 class="flex-middle">Player</h1>
           <div class="d-flex flex-row center">
-            
+
           <select [(ngModel)]="bot_id" (change)="onSelectedPlayerChanged($event.target)">
-            <option 
-              *ngFor="let player of players" 
-              [value]="player.index" 
-              [selected]="player.id === bot_id" 
+            <option
+              *ngFor="let player of players"
+              [value]="player.index"
+              [selected]="player.id === bot_id"
               >
-            
-              {{ player.name }}#{{ player.id }}
-            
+
+              {{ player.name }}
+
             </option>
           </select>
-          
+
           </div>
         </div>
         <div class="d-flex flex-column bordered">
