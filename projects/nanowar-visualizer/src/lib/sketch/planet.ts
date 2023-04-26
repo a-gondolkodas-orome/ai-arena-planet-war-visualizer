@@ -42,7 +42,7 @@ export class Planet {
     ctx.textSize(12);
     ctx.text(this.population, this.pos.x, this.pos.y);
     ctx.textSize(6);
-    ctx.text(`${this.uid}, ${this.production}`, this.pos.x, this.pos.y - 12);
+    ctx.text(`#${this.uid} ↑${this.production}`, this.pos.x, this.pos.y - 12);
     ctx.textSize(12);
     ctx.noStroke();
   }

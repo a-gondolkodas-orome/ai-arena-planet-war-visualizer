@@ -2,24 +2,24 @@
   <div class="canvas">
     <div id="canvas"></div>
   </div>
-  <div class="panel">
+  <div class="panel" *ngIf="game">
     <div class="button-container">
       <div class="d-flex flex-row flex-around">
         <div class="d-flex flex-column bordered">
           <h1 class="flex-middle">Player</h1>
           <div class="d-flex flex-row center">
 
-          <select [(ngModel)]="bot_id" (change)="onSelectedPlayerChanged($event.target)">
-            <option
-              *ngFor="let player of players"
-              [value]="player.index"
-              [selected]="player.id === bot_id"
+            <select [(ngModel)]="bot_id" (change)="onSelectedPlayerChanged($event.target)">
+              <option
+                *ngFor="let player of game.players"
+                [value]="player.index"
+                [selected]="player.id === bot_id"
               >
 
-              {{ player.name }}
+                {{ player.name }}
 
-            </option>
-          </select>
+              </option>
+            </select>
 
           </div>
         </div>
@@ -29,7 +29,7 @@
             <fa-icon class="clickable" [icon]="start_arrow" (click)="restartButtonClickedEvent()"></fa-icon>
             <fa-icon class="clickable" [icon]="left_arrow" (click)="prevButtonClickedEvent()"></fa-icon>
             <input defaultValue="0" type="number" min="0" [max]="last" [ngModel]="time"
-            (ngModelChange)="onTickChanged($event)" (blur)="onTickInputLostFocus()" />
+                   (ngModelChange)="onTickChanged($event)" (blur)="onTickInputLostFocus()" />
             <fa-icon class="clickable" [icon]="right_arrow" (click)="nextButtonClickedEvent()"></fa-icon>
             <fa-icon class="clickable" [icon]="end_arrow" (click)="endButtonClickedEvent()"></fa-icon>
           </div>
@@ -38,14 +38,24 @@
           <h1 class="flex-middle">Animáció</h1>
           <div class="d-flex flex-row">
             <fa-icon *ngIf="!isAnimating" [icon]="star_icon" class="clickable"
-            (click)="animateStartButtonClickedEvent()"></fa-icon>
+                     (click)="animateStartButtonClickedEvent()"></fa-icon>
             <fa-icon *ngIf="isAnimating" [icon]="pause_icon" class="clickable"
-          (click)="animateEndButtonClickedEvent()"></fa-icon>
-          <input id="fps-range" type="range" min="0.25" max="10" step="0.25" [value]="fps"
-          (input)="fpsInputEvent($event)" />
+                     (click)="animateEndButtonClickedEvent()"></fa-icon>
+            <input id="fps-range" type="range" min="0.25" max="10" step="0.25" [value]="fps"
+                   (input)="fpsInputEvent($event)" />
+          </div>
         </div>
       </div>
-    </div>
+      <div class="bordered no-padding">
+        <mat-list>
+          <mat-list-item *ngFor="let player of game.players">
+            <div class="bot-row">
+              <img class="planet-image" src="{{player.planetImagePath}}" width="20">
+              <b>{{player.name}}</b> total army: {{player.armySize}}
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </div>
       <div class="bordered">
         <h1 class="messages-header">Üzenetek:</h1>
         <div class="messages">

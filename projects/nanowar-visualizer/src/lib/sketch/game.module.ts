@@ -22,10 +22,12 @@ export class GameModule {
 
   update(data: JsonTick) {
     const { planets, troops }: { planets: JsonPlanet[]; troops: JsonTroops[] } = data;
+    for (const player of this.players) player.armySize = 0;
     this.troops = troops.map((x) => this.createTroops(x));
-    this.planets.forEach((p, i) =>
-      p.update(planets[i].population, this.players[planets[i].player] || null),
-    );
+    this.planets.forEach((p, i) => {
+      p.update(planets[i].population, this.players[planets[i].player] || null);
+      if (planets[i].player != null) this.players[planets[i].player].armySize += planets[i].population;
+    });
   }
 
   createPlanet({
@@ -65,6 +67,7 @@ export class GameModule {
     distance: number;
     progress: number;
   }): Troop {
+    this.players[player].armySize += size;
     return new Troop(
       id,
       this.planets[from],

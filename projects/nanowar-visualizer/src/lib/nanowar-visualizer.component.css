@@ -227,4 +227,13 @@
   padding-right: 10px;
 }
 
+.no-padding * {
+  padding: initial;
+}
 
+.bot-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}

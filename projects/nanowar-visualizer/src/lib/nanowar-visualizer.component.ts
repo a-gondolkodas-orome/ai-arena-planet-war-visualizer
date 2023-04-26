@@ -16,22 +16,10 @@ import {
   JsonPlanetInit,
   JsonPlayer,
   JsonTick,
-} from './sketch/interfaces';
-import { BotMessageBundle } from './sketch/message';
-import { Player } from './sketch/player';
+} from "./sketch/interfaces";
+import { BotMessageBundle } from "./sketch/message";
+import { Player } from "./sketch/player";
 
-export class PlayerSelectionItem {
-  id: string;
-  name: string;
-  index: number;
-
-  constructor(id: string, name: string, index: number) {
-    this.id = id;
-    this.name = name;
-    this.index = index;
-  }
-
-}
 
 @Component({
   selector: "lib-nanowar-visualizer",
@@ -49,7 +37,7 @@ export class NanowarVisualizerComponent implements OnChanges, AfterViewInit {
   public pause_icon = faPause;
   public star_icon = faPlay;
   public messages: BotMessageBundle | null = null;
-  public players: PlayerSelectionItem[] = [];
+  public game?: GameModule;
 
   private last_set_time = 0;
   public time = 0;
@@ -60,13 +48,12 @@ export class NanowarVisualizerComponent implements OnChanges, AfterViewInit {
   private instance?: p5;
   private last_time = 0;
   private accFrameTime = 0;
-  
+
   private updates: JsonTick[] = [];
 
   private jsonLog?: JsonLog;
 
   private sketch(ctx: p5): void {
-    let game: GameModule;
     let scale: number;
     let backgroundImage: p5.Image;
     let last_tick = -1;
@@ -84,15 +71,15 @@ export class NanowarVisualizerComponent implements OnChanges, AfterViewInit {
       board_width = width;
       board_height = height;
       const clientHeight =
-        document.querySelector<HTMLDivElement>('#container')?.clientHeight ?? 600;
-      const clientWidth = document.querySelector<HTMLDivElement>('#canvas')?.clientWidth ?? 800;
+        document.querySelector<HTMLDivElement>("#container")?.clientHeight ?? 600;
+      const clientWidth = document.querySelector<HTMLDivElement>("#canvas")?.clientWidth ?? 800;
       const wratio = clientWidth / board_width;
       const hratio = clientHeight / board_height;
       const min_ratio = Math.min(wratio, hratio);
 
       const C = ctx.createCanvas(board_width * min_ratio, board_height * min_ratio);
-      C.parent('canvas');
-      backgroundImage = ctx.loadImage('./assets/bg1.png');
+      C.parent("canvas");
+      backgroundImage = ctx.loadImage("./assets/bg1.png");
 
       scale = min_ratio;
       ctx.scale(min_ratio);
@@ -100,15 +87,16 @@ export class NanowarVisualizerComponent implements OnChanges, AfterViewInit {
       this.updates = ticks;
       this.last = this.updates.length - 1;
 
-      this.players = players.map((x) => new PlayerSelectionItem(x.id, x.name, x.index)); 
+      // this.players = players.map((player) => ({ ...player, planetImagePath: Player.getPlanetImagePath(player.index) }));
 
-      game = new GameModule(planets, players, ctx);
-      
-      
+      this.game = new GameModule(planets, players, ctx);
+
+
       ctx.textAlign(ctx.CENTER, ctx.CENTER);
     };
 
     ctx.draw = () => {
+      if (!this.game) { throw new Error("this.game not initialized"); }
       if (this.isAnimating) {
         const currentTime = window.performance.now();
         const deltaTime = window.performance.now() - this.last_time;
@@ -123,12 +111,12 @@ export class NanowarVisualizerComponent implements OnChanges, AfterViewInit {
 
       if (this.time <= this.last && this.time >= 0) {
         ctx.scale(scale);
-        ctx.background(backgroundImage ?? '#000000');
-        game.update(this.updates[this.time]);
+        ctx.background(backgroundImage ?? "#000000");
+        this.game.update(this.updates[this.time]);
         this.updates[this.time]?.messages[this.bot_id];
-        game.render(ctx, this.isAnimating ? this.accFrameTime * this.fps : 1);
-        game.troops = [];
-        if(last_tick != this.time){
+        this.game.render(ctx, this.isAnimating ? this.accFrameTime * this.fps : 1);
+        this.game.troops = [];
+        if (last_tick != this.time) {
           this.messages = new BotMessageBundle(this.updates[this.time].messages[this.bot_id]);
         }
         last_tick = this.time;
@@ -140,18 +128,18 @@ export class NanowarVisualizerComponent implements OnChanges, AfterViewInit {
     };
 
     ctx.windowResized = function() {
-      const clientHeight = document.querySelector<HTMLDivElement>('#container')?.clientHeight ?? 600;
-      const clientWidth = document.querySelector<HTMLDivElement>('#canvas')?.clientWidth ?? 800;
+      const clientHeight = document.querySelector<HTMLDivElement>("#container")?.clientHeight ?? 600;
+      const clientWidth = document.querySelector<HTMLDivElement>("#canvas")?.clientWidth ?? 800;
       const wratio = clientWidth / board_width;
       const hratio = clientHeight / board_height;
       const min_ratio = Math.min(wratio, hratio);
       const C = ctx.resizeCanvas(board_width * min_ratio, board_height * min_ratio);
       scale = min_ratio;
       ctx.scale(scale);
-    }
+    };
   }
 
-  onSelectedPlayerChanged(event:any) {
+  onSelectedPlayerChanged(event: any) {
     const value = event.value;
     this.bot_id = value;
     this.messages = new BotMessageBundle(this.updates[this.time].messages[this.bot_id]);
@@ -239,4 +227,6 @@ export class NanowarVisualizerComponent implements OnChanges, AfterViewInit {
       }
     }, 0);
   }
+
+  protected readonly Player = Player;
 }
