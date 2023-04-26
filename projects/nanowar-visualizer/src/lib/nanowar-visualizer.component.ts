@@ -11,7 +11,20 @@ import {
   JsonTick,
 } from './sketch/interfaces';
 import { BotMessageBundle } from './sketch/message';
+import { Player } from './sketch/player';
 
+export class PlayerSelectionItem {
+  id: string;
+  name: string;
+  index: number;
+
+  constructor(id: string, name: string, index: number) {
+    this.id = id;
+    this.name = name;
+    this.index = index;
+  }
+
+}
 
 @Component({
   selector: 'lib-nanowar-visualizer',
@@ -29,7 +42,8 @@ export class NanowarVisualizerComponent implements OnChanges {
   public pause_icon = faPause;
   public star_icon = faPlay;
   public messages: BotMessageBundle | null = null;
-  
+  public players: PlayerSelectionItem[] = [];
+
   private last_set_time = 0;
   public time = 0;
   public last = 0;
@@ -39,14 +53,17 @@ export class NanowarVisualizerComponent implements OnChanges {
   private instance?: p5;
   private last_time = 0;
   private accFrameTime = 0;
-
+  
+  private updates: JsonTick[] = [];
 
   private sketch(ctx: p5): void {
     let game: GameModule;
-    let updates: JsonTick[];
     let scale: number;
     let backgroundImage: p5.Image;
     let last_tick = -1;
+    let board_width = 0;
+    let board_height = 0;
+
     ctx.setup = () => {
       const jsonObj: JsonLog = JSON.parse(this.jsonstring);
       const { init, ticks }: { init: JsonInit; ticks: JsonTick[] } = jsonObj;
@@ -56,27 +73,30 @@ export class NanowarVisualizerComponent implements OnChanges {
         players,
       }: { board: JsonBoard; planets: JsonPlanetInit[]; players: JsonPlayer[] } = init;
       const { width, height }: { width: number; height: number } = board;
-
+      board_width = width;
+      board_height = height;
       const clientHeight =
         document.querySelector<HTMLDivElement>('#container')?.clientHeight ?? 600;
       const clientWidth = document.querySelector<HTMLDivElement>('#canvas')?.clientWidth ?? 800;
-      const wratio = clientWidth / width;
-      const hratio = clientHeight / height;
+      const wratio = clientWidth / board_width;
+      const hratio = clientHeight / board_height;
       const min_ratio = Math.min(wratio, hratio);
 
-      const C = ctx.createCanvas(width * min_ratio, height * min_ratio);
+      const C = ctx.createCanvas(board_width * min_ratio, board_height * min_ratio);
       C.parent('canvas');
       backgroundImage = ctx.loadImage('./assets/bg1.png');
-
-
 
       scale = min_ratio;
       ctx.scale(min_ratio);
 
-      updates = ticks;
-      this.last = updates.length - 1;
+      this.updates = ticks;
+      this.last = this.updates.length - 1;
+
+      this.players = players.map((x) => new PlayerSelectionItem(x.id, x.name, x.index)); 
 
       game = new GameModule(planets, players, ctx);
+      
+      
       ctx.textAlign(ctx.CENTER, ctx.CENTER);
     };
 
@@ -96,21 +116,37 @@ export class NanowarVisualizerComponent implements OnChanges {
       if (this.time <= this.last && this.time >= 0) {
         ctx.scale(scale);
         ctx.background(backgroundImage ?? '#000000');
-        game.update(updates[this.time]);
-        updates[this.time]?.messages[this.bot_id];
+        game.update(this.updates[this.time]);
+        this.updates[this.time]?.messages[this.bot_id];
         game.render(ctx, this.isAnimating ? this.accFrameTime * this.fps : 1);
         game.troops = [];
         if(last_tick != this.time){
-          this.messages = new BotMessageBundle(updates[this.time].messages[this.bot_id]);
+          this.messages = new BotMessageBundle(this.updates[this.time].messages[this.bot_id]);
         }
         last_tick = this.time;
       }
-
 
       if (this.time == this.last && this.isAnimating) {
         this.isAnimating = false;
       }
     };
+
+    ctx.windowResized = function() {
+      const clientHeight = document.querySelector<HTMLDivElement>('#container')?.clientHeight ?? 600;
+      const clientWidth = document.querySelector<HTMLDivElement>('#canvas')?.clientWidth ?? 800;
+      const wratio = clientWidth / board_width;
+      const hratio = clientHeight / board_height;
+      const min_ratio = Math.min(wratio, hratio);
+      const C = ctx.resizeCanvas(board_width * min_ratio, board_height * min_ratio);
+      scale = min_ratio;
+      ctx.scale(scale);
+    }
+  }
+
+  onSelectedPlayerChanged(event:any) {
+    const value = event.value;
+    this.bot_id = value;
+    this.messages = new BotMessageBundle(this.updates[this.time].messages[this.bot_id]);
   }
 
   onTickChanged(new_tick: number | null): void{
@@ -175,4 +211,6 @@ export class NanowarVisualizerComponent implements OnChanges {
       this.instance = new p5(this.sketch.bind(this));
     }
   }
+
+  
 }

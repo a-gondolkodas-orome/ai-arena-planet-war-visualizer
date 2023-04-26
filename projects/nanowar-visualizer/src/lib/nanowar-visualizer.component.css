@@ -10,7 +10,18 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+#container > div {
+  flex-basis: 50%;  
+}
+
+
+@media only screen and (max-width: 600px) {
+  #container > div {
+    flex-basis: 100%;
+  }
 }
 
 .canvas {
@@ -33,7 +44,6 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  overflow: scroll;
 }
 
 .panel * {
@@ -109,6 +119,10 @@
 
 .flex-out {
   justify-content: space-around;
+}
+
+.flex-around {
+  justify-content: space-between;
 }
 
 #fps-range {

@@ -45,12 +45,18 @@ export class Troop {
     const Q: Point = new Point(Math.cos(angle) * len, Math.sin(angle) * len);
     const x = a.x + Q.x;
     const y = a.y + Q.y;
-    const sx = a.x + Math.cos(angle) * (this.from.size / 2);
-    const sy = a.y + Math.sin(angle) * (this.from.size / 2);
-    const ex = b.x - Math.cos(angle) * (this.to.size / 2);
-    const ey = b.y - Math.sin(angle) * (this.to.size / 2);
-
     const size = 20;
+    
+    // const sx = a.x + Math.cos(angle) * (this.from.size / 2);
+    // const sy = a.y + Math.sin(angle) * (this.from.size / 2);
+    // const ex = b.x - Math.cos(angle) * (this.to.size / 2);
+    // const ey = b.y - Math.sin(angle) * (this.to.size / 2);
+
+    const sx = x;
+    const sy = y;
+    const ex = b.x - Math.cos(angle) * (size / 2);
+    const ey = b.y - Math.sin(angle) * (size / 2);
+
     const offset = 5;
     ctx.strokeWeight(1);
     ctx.stroke('white');
