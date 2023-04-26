@@ -1,9 +1,16 @@
-import { Component, Input, OnChanges } from '@angular/core';
-import { faAngleRight, faAngleLeft, faAngleDoubleLeft, faAngleDoubleRight, faPause, faPlay } from '@fortawesome/free-solid-svg-icons';import p5 from 'p5';
-import { GameModule } from './sketch/game.module';
+import { AfterViewInit, Component, Input, OnChanges, OnInit } from "@angular/core";
+import {
+  faAngleRight,
+  faAngleLeft,
+  faAngleDoubleLeft,
+  faAngleDoubleRight,
+  faPause,
+  faPlay,
+} from "@fortawesome/free-solid-svg-icons";
+import p5 from "p5";
+import { GameModule } from "./sketch/game.module";
 import {
   JsonBoard,
-  JsonBotMessage,
   JsonInit,
   JsonLog,
   JsonPlanetInit,
@@ -27,11 +34,11 @@ export class PlayerSelectionItem {
 }
 
 @Component({
-  selector: 'lib-nanowar-visualizer',
-  templateUrl: './nanowar-visualizer.component.html',
-  styleUrls: ['./nanowar-visualizer.component.css'],
+  selector: "lib-nanowar-visualizer",
+  templateUrl: "./nanowar-visualizer.component.html",
+  styleUrls: ["./nanowar-visualizer.component.css"],
 })
-export class NanowarVisualizerComponent implements OnChanges {
+export class NanowarVisualizerComponent implements OnChanges, AfterViewInit {
   @Input() public jsonstring!: string;
   @Input() public bot_id!: string;
 
@@ -56,6 +63,8 @@ export class NanowarVisualizerComponent implements OnChanges {
   
   private updates: JsonTick[] = [];
 
+  private jsonLog?: JsonLog;
+
   private sketch(ctx: p5): void {
     let game: GameModule;
     let scale: number;
@@ -65,8 +74,7 @@ export class NanowarVisualizerComponent implements OnChanges {
     let board_height = 0;
 
     ctx.setup = () => {
-      const jsonObj: JsonLog = JSON.parse(this.jsonstring);
-      const { init, ticks }: { init: JsonInit; ticks: JsonTick[] } = jsonObj;
+      const { init, ticks }: { init: JsonInit; ticks: JsonTick[] } = (this.jsonLog = JSON.parse(this.jsonstring));
       const {
         board,
         planets,
@@ -109,7 +117,7 @@ export class NanowarVisualizerComponent implements OnChanges {
         this.accFrameTime += deltaTime / 1000;
 
         const d = Math.floor(this.accFrameTime * this.fps);
-        this.accFrameTime = this.accFrameTime - (d * 1) / this.fps;
+        this.accFrameTime = this.accFrameTime - d / this.fps;
         this.time = Math.min(this.time + d, this.last);
       }
 
@@ -149,7 +157,17 @@ export class NanowarVisualizerComponent implements OnChanges {
     this.messages = new BotMessageBundle(this.updates[this.time].messages[this.bot_id]);
   }
 
-  onTickChanged(new_tick: number | null): void{
+  private getCanvasProps({ width, height }: JsonBoard) {
+    const clientHeight =
+      document.querySelector<HTMLDivElement>("#container")?.clientHeight ?? 600;
+    const clientWidth = document.querySelector<HTMLDivElement>("#canvas")?.clientWidth ?? 800;
+    const wratio = clientWidth / width;
+    const hratio = clientHeight / height;
+    const min_ratio = Math.min(wratio, hratio);
+    return { width: width * min_ratio, height: height * min_ratio, scale: min_ratio };
+  }
+
+  onTickChanged(new_tick: number | null): void {
     let selected_tick: number = new_tick ?? this.time;
     selected_tick = Math.min(selected_tick, this.last);
     selected_tick = Math.max(selected_tick, 0);
@@ -158,7 +176,7 @@ export class NanowarVisualizerComponent implements OnChanges {
     this.instance?.redraw();
   }
 
-  onTickInputLostFocus(): void{
+  onTickInputLostFocus(): void {
     // TODO(Kristofy): There is a bug, that when the input loses focus after deleting the value, the user cannot see, that the value is still the last valid value
     // let tmp = this.time;
     // this.onTickChanged(this.last_time);
@@ -178,7 +196,7 @@ export class NanowarVisualizerComponent implements OnChanges {
     this.instance?.redraw();
   }
 
-  restartButtonClickedEvent(): void { 
+  restartButtonClickedEvent(): void {
     this.time = 0;
     this.animateEndButtonClickedEvent();
     this.instance?.redraw();
@@ -212,5 +230,13 @@ export class NanowarVisualizerComponent implements OnChanges {
     }
   }
 
-  
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      if (this.jsonLog) {
+        const { width, height, scale } = this.getCanvasProps(this.jsonLog.init.board);
+        this.instance?.resizeCanvas(width, height);
+        this.instance?.scale(scale);
+      }
+    }, 0);
+  }
 }

@@ -19,6 +19,7 @@ export interface JsonBotMessage {
   received: JsonMessage[];
   sent: JsonMessage[];
   commandError?: string | null;
+  botLog?: string | null;
 }
 
 export interface JsonMessage {

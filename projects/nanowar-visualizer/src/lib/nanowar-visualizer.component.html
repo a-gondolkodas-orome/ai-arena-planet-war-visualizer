@@ -68,7 +68,7 @@
               </div>
             </div>
           </div>
-          
+
           <div *ngIf="messages?.sent !== null" class="sent-message">
             <h1>
               Bot Küldte
@@ -102,6 +102,23 @@
                     </div>
                     <div class="message-time">
                       {{error.timestamp}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="messages?.botLog !== null && messages?.botLog?.length !== 0 " class="log-message">
+            <h1>
+              Bot Log
+            </h1>
+            <div class="">
+              <div *ngFor="let botLog of messages?.botLog">
+                <div class="message">
+                  <div class="message-content">
+                    <div class="message-text">
+                      {{botLog.message}}
                     </div>
                   </div>
                 </div>
