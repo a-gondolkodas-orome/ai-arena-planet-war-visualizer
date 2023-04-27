@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnChanges, OnInit } from "@angular/core";
+import { Component, Input, OnChanges } from "@angular/core";
 import {
   faAngleRight,
   faAngleLeft,
@@ -26,7 +26,7 @@ import { Player } from "./sketch/player";
   templateUrl: "./nanowar-visualizer.component.html",
   styleUrls: ["./nanowar-visualizer.component.css"],
 })
-export class NanowarVisualizerComponent implements OnChanges, AfterViewInit {
+export class NanowarVisualizerComponent implements OnChanges {
   @Input() public jsonstring!: string;
   @Input() public bot_id!: string;
 
@@ -145,16 +145,6 @@ export class NanowarVisualizerComponent implements OnChanges, AfterViewInit {
     this.messages = new BotMessageBundle(this.updates[this.time].messages[this.bot_id]);
   }
 
-  private getCanvasProps({ width, height }: JsonBoard) {
-    const clientHeight =
-      document.querySelector<HTMLDivElement>("#container")?.clientHeight ?? 600;
-    const clientWidth = document.querySelector<HTMLDivElement>("#canvas")?.clientWidth ?? 800;
-    const wratio = clientWidth / width;
-    const hratio = clientHeight / height;
-    const min_ratio = Math.min(wratio, hratio);
-    return { width: width * min_ratio, height: height * min_ratio, scale: min_ratio };
-  }
-
   onTickChanged(new_tick: number | null): void {
     let selected_tick: number = new_tick ?? this.time;
     selected_tick = Math.min(selected_tick, this.last);
@@ -216,16 +206,6 @@ export class NanowarVisualizerComponent implements OnChanges, AfterViewInit {
     if (this.jsonstring) {
       this.instance = new p5(this.sketch.bind(this));
     }
-  }
-
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      if (this.jsonLog) {
-        const { width, height, scale } = this.getCanvasProps(this.jsonLog.init.board);
-        this.instance?.resizeCanvas(width, height);
-        this.instance?.scale(scale);
-      }
-    }, 0);
   }
 
   protected readonly Player = Player;
