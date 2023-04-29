@@ -9,11 +9,11 @@
           <h1 class="flex-middle">Player</h1>
           <div class="d-flex flex-row center">
 
-            <select [(ngModel)]="bot_id" (change)="onSelectedPlayerChanged($event.target)">
+            <select [(ngModel)]="botIndex" (change)="onSelectedPlayerChanged($event.target)">
               <option
                 *ngFor="let player of game.players"
                 [value]="player.index"
-                [selected]="player.index === bot_id"
+                [selected]="player.index === botIndex"
               >
 
                 {{ player.name }}

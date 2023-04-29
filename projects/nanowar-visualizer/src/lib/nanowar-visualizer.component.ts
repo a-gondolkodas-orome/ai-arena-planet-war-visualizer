@@ -28,7 +28,8 @@ import { Player } from "./sketch/player";
 })
 export class NanowarVisualizerComponent implements OnChanges {
   @Input() public jsonstring!: string;
-  @Input() public bot_id!: number;
+  @Input() public bot_id!: string;
+  public botIndex!: number;
 
   public left_arrow = faAngleLeft;
   public right_arrow = faAngleRight;
@@ -90,7 +91,9 @@ export class NanowarVisualizerComponent implements OnChanges {
       // this.players = players.map((player) => ({ ...player, planetImagePath: Player.getPlanetImagePath(player.index) }));
 
       this.game = new GameModule(planets, players, ctx);
-
+      const selectedPlayer = players.find((player) => player.id === this.bot_id);
+      if (!selectedPlayer) throw new Error("Specified bot id not present in match log");
+      this.botIndex = selectedPlayer.index;
 
       ctx.textAlign(ctx.CENTER, ctx.CENTER);
     };
@@ -113,11 +116,11 @@ export class NanowarVisualizerComponent implements OnChanges {
         ctx.scale(scale);
         ctx.background(backgroundImage ?? "#000000");
         this.game.update(this.updates[this.time]);
-        this.updates[this.time]?.bots[this.bot_id];
+        this.updates[this.time]?.bots[this.botIndex];
         this.game.render(ctx, this.isAnimating ? this.accFrameTime * this.fps : 1);
         this.game.troops = [];
         if (last_tick != this.time) {
-          this.messages = new BotMessageBundle(this.updates[this.time].bots[this.bot_id]);
+          this.messages = new BotMessageBundle(this.updates[this.time].bots[this.botIndex]);
         }
         last_tick = this.time;
       }
@@ -142,7 +145,7 @@ export class NanowarVisualizerComponent implements OnChanges {
   onSelectedPlayerChanged(event: any) {
     const value = event.value;
     this.bot_id = value;
-    this.messages = new BotMessageBundle(this.updates[this.time].bots[this.bot_id]);
+    this.messages = new BotMessageBundle(this.updates[this.time].bots[this.botIndex]);
   }
 
   onTickChanged(new_tick: number | null): void {
