@@ -39,7 +39,7 @@ export class Planet {
     }
     ctx.stroke('#ffffff');
     ctx.strokeWeight(1);
-    ctx.fill(this.player.color);
+    ctx.fill(color);
     ctx.textSize(12);
     ctx.text(this.population, this.pos.x, this.pos.y);
     ctx.textSize(6);
