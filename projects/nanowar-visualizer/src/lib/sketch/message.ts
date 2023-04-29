@@ -1,4 +1,4 @@
-import { JsonBotMessage, JsonMessage } from './interfaces';
+import { JsonBot, JsonMessage } from './interfaces';
 
 export class BotMessage {
   public message: string;
@@ -16,7 +16,7 @@ export class BotMessageBundle {
   public error: BotMessage[];
   public botLog: BotMessage[];
 
-  constructor(json_bot_message: JsonBotMessage) {
+  constructor(json_bot_message: JsonBot) {
     this.received = json_bot_message.received.map((x) => new BotMessage(x));
     this.sent = json_bot_message.sent.map((x) => new BotMessage(x));
     this.error = json_bot_message.commandError ? [new BotMessage({ message: json_bot_message.commandError, timestamp: null })] : [];

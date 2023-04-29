@@ -28,7 +28,7 @@ import { Player } from "./sketch/player";
 })
 export class NanowarVisualizerComponent implements OnChanges {
   @Input() public jsonstring!: string;
-  @Input() public bot_id!: string;
+  @Input() public bot_id!: number;
 
   public left_arrow = faAngleLeft;
   public right_arrow = faAngleRight;
@@ -113,11 +113,11 @@ export class NanowarVisualizerComponent implements OnChanges {
         ctx.scale(scale);
         ctx.background(backgroundImage ?? "#000000");
         this.game.update(this.updates[this.time]);
-        this.updates[this.time]?.messages[this.bot_id];
+        this.updates[this.time]?.bots[this.bot_id];
         this.game.render(ctx, this.isAnimating ? this.accFrameTime * this.fps : 1);
         this.game.troops = [];
         if (last_tick != this.time) {
-          this.messages = new BotMessageBundle(this.updates[this.time].messages[this.bot_id]);
+          this.messages = new BotMessageBundle(this.updates[this.time].bots[this.bot_id]);
         }
         last_tick = this.time;
       }
@@ -142,7 +142,7 @@ export class NanowarVisualizerComponent implements OnChanges {
   onSelectedPlayerChanged(event: any) {
     const value = event.value;
     this.bot_id = value;
-    this.messages = new BotMessageBundle(this.updates[this.time].messages[this.bot_id]);
+    this.messages = new BotMessageBundle(this.updates[this.time].bots[this.bot_id]);
   }
 
   onTickChanged(new_tick: number | null): void {

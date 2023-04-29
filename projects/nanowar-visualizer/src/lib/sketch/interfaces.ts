@@ -12,14 +12,17 @@ export interface JsonInit {
 export interface JsonTick {
   planets: JsonPlanet[];
   troops: JsonTroops[];
-  messages: { [bot_id: string] : JsonBotMessage; };
+  bots: JsonBot[];
 }
 
-export interface JsonBotMessage {
+export interface JsonBot {
+  id: string;
+  index: number;
   received: JsonMessage[];
   sent: JsonMessage[];
   commandError?: string | null;
   botLog?: string | null;
+  offline?: true;
 }
 
 export interface JsonMessage {

@@ -1,7 +1,7 @@
 import { Planet } from './planet';
 import { Player } from './player';
 import { Troop } from './troop';
-import { JsonBotMessage, JsonPlanet, JsonPlanetInit, JsonPlayer, JsonTick, JsonTroops } from './interfaces';
+import { JsonPlanet, JsonPlanetInit, JsonPlayer, JsonTick, JsonTroops } from './interfaces';
 import p5 from 'p5';
 
 export class GameModule {

@@ -13,7 +13,7 @@
               <option
                 *ngFor="let player of game.players"
                 [value]="player.index"
-                [selected]="player.id === bot_id"
+                [selected]="player.index === bot_id"
               >
 
                 {{ player.name }}
