@@ -49,7 +49,7 @@
       <div class="bordered no-padding">
         <mat-list>
           <mat-list-item *ngFor="let player of game.players">
-            <div class="bot-row">
+            <div class="bot-row" [ngClass]="{'offline-bot': this.ticks[this.time].bots[player.index].offline}">
               <img class="planet-image" src="{{player.planetImagePath}}" width="20">
               <b>{{player.name}}</b> total army: {{player.armySize}}
             </div>

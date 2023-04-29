@@ -50,7 +50,7 @@ export class NanowarVisualizerComponent implements OnChanges {
   private last_time = 0;
   private accFrameTime = 0;
 
-  private updates: JsonTick[] = [];
+  ticks: JsonTick[] = [];
 
   private jsonLog?: JsonLog;
 
@@ -85,8 +85,8 @@ export class NanowarVisualizerComponent implements OnChanges {
       scale = min_ratio;
       ctx.scale(min_ratio);
 
-      this.updates = ticks;
-      this.last = this.updates.length - 1;
+      this.ticks = ticks;
+      this.last = this.ticks.length - 1;
 
       // this.players = players.map((player) => ({ ...player, planetImagePath: Player.getPlanetImagePath(player.index) }));
 
@@ -115,12 +115,12 @@ export class NanowarVisualizerComponent implements OnChanges {
       if (this.time <= this.last && this.time >= 0) {
         ctx.scale(scale);
         ctx.background(backgroundImage ?? "#000000");
-        this.game.update(this.updates[this.time]);
-        this.updates[this.time]?.bots[this.botIndex];
+        this.game.update(this.ticks[this.time]);
+        this.ticks[this.time]?.bots[this.botIndex];
         this.game.render(ctx, this.isAnimating ? this.accFrameTime * this.fps : 1);
         this.game.troops = [];
         if (last_tick != this.time) {
-          this.messages = new BotMessageBundle(this.updates[this.time].bots[this.botIndex]);
+          this.messages = new BotMessageBundle(this.ticks[this.time].bots[this.botIndex]);
         }
         last_tick = this.time;
       }
@@ -145,7 +145,7 @@ export class NanowarVisualizerComponent implements OnChanges {
   onSelectedPlayerChanged(event: any) {
     const value = event.value;
     this.bot_id = value;
-    this.messages = new BotMessageBundle(this.updates[this.time].bots[this.botIndex]);
+    this.messages = new BotMessageBundle(this.ticks[this.time].bots[this.botIndex]);
   }
 
   onTickChanged(new_tick: number | null): void {
