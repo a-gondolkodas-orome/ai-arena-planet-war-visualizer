@@ -24,7 +24,7 @@ export class Planet {
 
   render(ctx: p5): void {
     if(Planet.uninhabitedPlanet === null) Planet.uninhabitedPlanet = ctx.loadImage("assets/min_planet0.png");
-    const color = this.player?.color ?? '#ffaaaaaa';
+    const color = this.player?.color ?? '#ffaaaa';
 
     ctx.noStroke();
     if(this.player?.planetImage == null) {
