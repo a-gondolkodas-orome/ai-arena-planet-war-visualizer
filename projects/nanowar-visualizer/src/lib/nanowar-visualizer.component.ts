@@ -24,7 +24,7 @@ import { Player } from "./sketch/player";
 @Component({
   selector: "lib-nanowar-visualizer",
   templateUrl: "./nanowar-visualizer.component.html",
-  styleUrls: ["./nanowar-visualizer.component.css"],
+  styleUrls: ["./nanowar-visualizer.component.scss"],
 })
 export class NanowarVisualizerComponent implements OnChanges {
   @Input() public jsonstring!: string;
