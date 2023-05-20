@@ -1,6 +1,6 @@
 {
   "name": "@kristofy/nanowar-visualizer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "peerDependencies": {
     "@angular/common": "^15.0.0",
