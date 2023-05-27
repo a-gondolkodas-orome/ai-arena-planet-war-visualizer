@@ -7,7 +7,7 @@
   "scripts": {
     "start": "ng serve",
     "build": "ng build",
-    "publish-lib": "ng build nanowar-visualizer && npm publish ./dist/nanowar-visualizer",
+    "publish-lib": "ng build nanowar-visualizer && yarn run publish ./dist/nanowar-visualizer",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"
