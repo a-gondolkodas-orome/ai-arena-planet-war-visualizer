@@ -7,7 +7,7 @@
   "scripts": {
     "start": "ng serve",
     "build": "ng build",
-    "publish-lib": "ng build nanowar-visualizer && npm publish ./dist/nanowar-visualizer",
+    "publish-lib": "ng build nanowar-visualizer && yarn run publish ./dist/nanowar-visualizer",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"
@@ -54,5 +54,6 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "ng-packagr": "^15.0.0",
     "typescript": "~4.8.2"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }

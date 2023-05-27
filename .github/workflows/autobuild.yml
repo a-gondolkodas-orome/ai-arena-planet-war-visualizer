@@ -18,9 +18,10 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
+        cache: 'yarn'
         node-version: 16
         registry-url: 'https://npm.pkg.github.com'
-    - run: npm install
-    - run: npm run publish-lib
+    - run: yarn --immutable
+    - run: yarn run publish-lib
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
