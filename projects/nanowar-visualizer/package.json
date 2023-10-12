@@ -1,11 +1,11 @@
 {
   "name": "@kristofy/nanowar-visualizer",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "type": "module",
   "peerDependencies": {
-    "@angular/common": "^15.0.0",
-    "@angular/core": "^15.0.0",
-    "@fortawesome/angular-fontawesome": "^0.12.1",
+    "@angular/common": "^16.0.0",
+    "@angular/core": "^16.0.0",
+    "@fortawesome/angular-fontawesome": "^0.13.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "p5": "1"
